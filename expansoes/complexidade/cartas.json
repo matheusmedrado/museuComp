@@ -1,0 +1,206 @@
+{
+  "id": "complexidade",
+  "version": 1,
+  "name": "Complexidade",
+  "baseMode": "hacker",
+  "setup": {
+    "charactersPerPlayer": 1,
+    "uniqueCharacters": true,
+    "characterSelectionOrder": "reverse_turn_order",
+    "startingEventCards": 1
+  },
+  "eventRules": {
+    "handLimit": 2,
+    "buyTiming": "turn_start",
+    "buyCostBits": 1,
+    "buysPerTurn": 1,
+    "playsPerPlayerPerTurn": 1,
+    "recycleDiscard": true
+  },
+  "equipmentRules": {
+    "slotsPerPlayer": 1,
+    "claimTiming": "after_successful_placement",
+    "claimsPerTurn": 1,
+    "replacedEquipment": "discard",
+    "activationTiming": "turn_end"
+  },
+  "comboRules": {
+    "trigger": "after_successful_placement",
+    "match": "ordered_adjacent",
+    "requiresCardFromCurrentPlay": true,
+    "claimsPerComboPerGame": 1,
+    "reward": { "bits": 1, "eventCards": 1 }
+  },
+  "characters": [
+    {
+      "id": "ada-lovelace",
+      "name": "Ada Lovelace",
+      "timelineCardId": "ada-lovelace",
+      "abilityName": "Algoritmo preciso",
+      "text": "Se acertar tanto o encaixe quanto o Ano cravado, ganhe 1 Bit extra.",
+      "passive": {
+        "trigger": "correct_placement_with_exact_year",
+        "effect": { "type": "gain_bits", "amount": 1 }
+      }
+    },
+    {
+      "id": "alan-turing",
+      "name": "Alan Turing",
+      "timelineCardId": "alan-turing",
+      "abilityName": "Segredo bem guardado",
+      "text": "Criptografar custa 1 Bit a menos.",
+      "passive": {
+        "trigger": "pay_encrypt_cost",
+        "effect": { "type": "reduce_bit_cost", "amount": 1 }
+      }
+    },
+    {
+      "id": "grace-hopper",
+      "name": "Grace Hopper",
+      "timelineCardId": "grace-hopper",
+      "abilityName": "Depuração",
+      "text": "Se errar um encaixe e não tiver nenhum evento na mão, compre 1 evento.",
+      "passive": {
+        "trigger": "failed_placement",
+        "conditions": { "eventHandEmpty": true },
+        "effect": { "type": "draw_events", "amount": 1 }
+      }
+    },
+    {
+      "id": "dorothy-vaughan",
+      "name": "Dorothy Vaughan",
+      "timelineCardId": "dorothy-vaughan",
+      "abilityName": "Revisão de cálculos",
+      "text": "Quando acertar um Duvido!, ganhe 1 Bit extra.",
+      "passive": {
+        "trigger": "correct_duvido",
+        "effect": { "type": "gain_bits", "amount": 1 }
+      }
+    },
+    {
+      "id": "tim-berners-lee",
+      "name": "Tim Berners-Lee",
+      "timelineCardId": "tim-berners-lee",
+      "abilityName": "Caminhos alternativos",
+      "text": "Ao usar a compra de Evento do turno, olhe até 2 do topo, fique com 1 e devolva o outro ao fundo.",
+      "passive": {
+        "trigger": "buy_event",
+        "effect": { "type": "choose_event_from_top", "lookCount": 2, "keepCount": 1 }
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "bug",
+      "name": "Bug",
+      "copies": 5,
+      "timing": "declare_duvido",
+      "actor": "challenger",
+      "text": "Jogue ao dizer Duvido! Se a jogada estiver errada, quem encaixou compra 1 carta de Timeline a mais.",
+      "effect": { "type": "increase_failed_placement_draw", "amount": 1 }
+    },
+    {
+      "id": "backup",
+      "name": "Backup",
+      "copies": 4,
+      "timing": "before_failed_duvido_penalty",
+      "actor": "challenger",
+      "text": "Se seu Duvido! falhar, evite a compra de 1 carta de Timeline de castigo.",
+      "effect": { "type": "reduce_failed_duvido_draw", "amount": 1 }
+    },
+    {
+      "id": "patch",
+      "name": "Patch",
+      "copies": 4,
+      "timing": "after_duvido_before_reveal",
+      "actor": "active_player",
+      "text": "Depois de um Duvido!, mude de posição 1 carta que você encaixou, sem olhar os anos. O Duvido! continua valendo.",
+      "effect": { "type": "move_placed_card", "amount": 1 }
+    },
+    {
+      "id": "firewall",
+      "name": "Firewall",
+      "copies": 3,
+      "timing": "after_bug_before_reveal",
+      "actor": "active_player",
+      "text": "Cancele o Bug jogado contra você. O Duvido! continua valendo.",
+      "effect": { "type": "cancel_event", "eventId": "bug" }
+    }
+  ],
+  "equipment": [
+    {
+      "id": "hollerith",
+      "name": "Máquina de Hollerith",
+      "timelineCardId": "hollerith",
+      "text": "Trocar custa 1 Bit a menos.",
+      "passive": {
+        "trigger": "pay_swap_cost",
+        "effect": { "type": "reduce_bit_cost", "amount": 1 }
+      }
+    },
+    {
+      "id": "eniac",
+      "name": "ENIAC",
+      "timelineCardId": "eniac",
+      "text": "Se acertar uma Aposta dupla, ganhe 1 Bit extra.",
+      "passive": {
+        "trigger": "correct_double_placement",
+        "effect": { "type": "gain_bits", "amount": 1 }
+      }
+    },
+    {
+      "id": "transistor",
+      "name": "Transistor",
+      "timelineCardId": "transistor",
+      "text": "A compra de Evento no início do turno custa 1 Bit a menos.",
+      "passive": {
+        "trigger": "pay_event_cost",
+        "effect": { "type": "reduce_bit_cost", "amount": 1 }
+      }
+    },
+    {
+      "id": "circuito-integrado",
+      "name": "Circuito Integrado",
+      "timelineCardId": "circuito-integrado",
+      "text": "Se acertar um encaixe depois de usar Patch ou Firewall naquela jogada, ganhe 1 Bit.",
+      "passive": {
+        "trigger": "correct_placement_after_active_event",
+        "conditions": { "eventIds": ["patch", "firewall"] },
+        "effect": { "type": "gain_bits", "amount": 1 }
+      }
+    },
+    {
+      "id": "ibm-system-360",
+      "name": "IBM System/360",
+      "timelineCardId": "ibm-system-360",
+      "text": "Quando acertar um Duvido!, compre 1 evento além do Bit normal.",
+      "passive": {
+        "trigger": "correct_duvido",
+        "effect": { "type": "draw_events", "amount": 1 }
+      }
+    }
+  ],
+  "combos": [
+    {
+      "id": "maquina-e-algoritmo",
+      "name": "Máquina + algoritmo",
+      "timelineCardIds": ["charles-babbage", "ada-lovelace"],
+      "text": "Ada escreveu um algoritmo para a Máquina Analítica projetada por Babbage.",
+      "source": "https://www.computerhistory.org/babbage/adalovelace/"
+    },
+    {
+      "id": "do-eniac-ao-edvac",
+      "name": "Do ENIAC ao EDVAC",
+      "timelineCardIds": ["eniac", "john-von-neumann"],
+      "text": "Von Neumann descreveu o programa armazenado em um relatório sobre o EDVAC, sucessor do ENIAC.",
+      "source": "https://www.computerhistory.org/timeline/1945/"
+    },
+    {
+      "id": "do-transistor-ao-chip",
+      "name": "Do transistor ao chip",
+      "timelineCardIds": ["transistor", "circuito-integrado"],
+      "text": "O circuito integrado reúne componentes, como transistores, numa única peça.",
+      "source": "https://www.computerhistory.org/siliconengine/all-semiconductor-solid-circuit-is-demonstrated/"
+    }
+  ]
+}

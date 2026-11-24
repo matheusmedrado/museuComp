@@ -44,6 +44,6 @@ Use as opções disponíveis no seu modo. Escolha Trocar, Criptografar ou Aposta
 
 Quando alguém esvaziar a mão, começa a última rodada: os demais jogam mais uma vez, até a vez voltar a quem esvaziou a mão. Quem tiver menos cartas ganha; em caso de empate, vence quem tiver mais Bits. Se também empatar nos Bits, a vitória é compartilhada.
 
-## Nota para a fase 2
+## Expansão opcional
 
-O jogo usa só os campos existentes `name`, `clue`, `category` e `year`. Cartas de ação precisariam de dados novos; dependências entre invenções poderiam usar um campo `requires`. O campo `difficulty` já existe, mas está como `null` em todas as cartas.
+[Complexidade](expansoes/complexidade/REGRAS.md) acrescenta Personagens, Eventos, Equipamentos e Combos sobre o modo Hacker, sem mexer no baralho base.
