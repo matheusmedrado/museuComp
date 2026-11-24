@@ -26,8 +26,18 @@ h1 span { color: var(--cyan); }
 .print-action p, #status { font: .8rem/1.45 var(--mono); color: #dedff2; }
 #status { margin: .85rem 0 1.15rem; }
 .deck { padding: 0 0 3rem; margin: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1.45rem; }
-.deck li { min-width: 0; }
-.deck .card { box-shadow: 0 .8rem 1.6rem #08092160; cursor: pointer; }
+.deck li { min-width: 0; container-type: inline-size; display: flex; flex-direction: column; }
+.deck .card {
+  display: flex;
+  flex: 1 0 auto;
+  aspect-ratio: auto;
+  min-height: calc(100cqw * 88 / 63);
+  box-shadow: 0 .8rem 1.6rem #08092160;
+  cursor: pointer;
+}
+.deck .frame { flex: 1; min-width: 0; height: auto; overflow: visible; }
+.deck .art { height: auto; aspect-ratio: 4 / 3; }
+.deck .card-head, .deck .card-foot { flex-wrap: wrap; row-gap: .35em; }
 .flip { display: block; width: 100%; margin-top: .5rem; padding: .45rem; border: 1px solid #ffffff50; border-radius: .4rem; color: var(--cyan); background: transparent; }
 .flip:hover { background: #ffffff14; }
 
