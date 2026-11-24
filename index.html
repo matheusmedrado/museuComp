@@ -129,6 +129,7 @@ body{font-family:var(--body);color:#fff;-webkit-font-smoothing:antialiased}
 .mode p,.setup,.finish{font-size:25px;line-height:1.35;color:#eef2ff}
 .setup{margin-top:26px}
 .finish{margin-top:34px}
+.manual-link{display:inline-block;margin-top:18px;color:#7fe7f5;font-size:25px;text-underline-offset:.2em}
 /* ---------- 4 baralho ---------- */
 .s-deck{padding:96px 120px 0}
 .dk-head{display:flex;justify-content:space-between;align-items:flex-end}
@@ -319,6 +320,7 @@ body{font-family:var(--body);color:#fff;-webkit-font-smoothing:antialiased}
     <div class="mode"><h4>Hacker · computação</h4><p>Todas as jogadas valem. Só o próximo jogador pode duvidar, e Ano cravado exige o ano exato.</p></div>
   </div>
   <p class="finish"><b>Fim de jogo:</b> alguém ficou sem cartas? Completem a volta. Vence quem tiver menos cartas; no empate, quem tiver mais Bits.</p>
+  <a class="manual-link" href="manual.html">Abrir manual para imprimir →</a>
   <footer class="foot f-dark"><div class="tl"></div><span class="pg"><b></b></span></footer>
 </section><section class="slide s-deck dark" data-n="5">
   <div class="dk-head">
@@ -441,6 +443,7 @@ body{font-family:var(--body);color:#fff;-webkit-font-smoothing:antialiased}
   function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides.forEach(function(s,k){s.classList.toggle('active',k===i)});cur=i;if(location.hash!=='#'+(i+1))history.replaceState(null,'','#'+(i+1))}
   addEventListener('keydown',function(e){
     var k=e.key;
+    if(k==='Enter'&&e.target.closest('a'))return;
     if(['ArrowRight','ArrowDown','PageDown',' ','Enter'].indexOf(k)>-1){e.preventDefault();go(cur+1)}
     else if(['ArrowLeft','ArrowUp','PageUp','Backspace'].indexOf(k)>-1){e.preventDefault();go(cur-1)}
     else if(k==='Home')go(0);else if(k==='End')go(slides.length-1);
