@@ -8,12 +8,13 @@
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-old-auto-expired"
   },
   "john-von-neumann": {
-    "file": "john-von-neumann.png",
-    "title": "John R. Vonneumann Los Alamos ID.png",
-    "source_url": "https://commons.wikimedia.org/wiki/File:John_R._Vonneumann_Los_Alamos_ID.png",
-    "author": "Federal Government of the United States",
+    "file": "john-von-neumann.jpg",
+    "title": "Ballistic Research Lab Advisory Committee First Meeting.gif",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ballistic_Research_Lab_Advisory_Committee_First_Meeting.gif",
+    "author": "Exército dos EUA (fotógrafo não identificado)",
     "license": "Public domain",
-    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov"
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USArmy",
+    "note": "Retrato recortado da foto de grupo de setembro de 1940."
   },
   "charles-babbage": {
     "file": "charles-babbage.jpg",
@@ -129,12 +130,13 @@
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-POTUS"
   },
   "circuito-integrado": {
-    "file": "circuito-integrado.png",
-    "title": "Replica IC.png",
-    "source_url": "https://commons.wikimedia.org/wiki/File:Replica_IC.png",
-    "author": "Florian Schäffer",
+    "file": "circuito-integrado.jpg",
+    "title": "TI SN7400P.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:TI_SN7400P.jpg",
+    "author": "Drahtlos",
     "license": "CC BY-SA 4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Protótipos de chips da série 74xx da Texas Instruments, posteriores ao primeiro circuito integrado de Kilby."
   },
   "mouse": {
     "file": "mouse.jpg",
