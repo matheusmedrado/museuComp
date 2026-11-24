@@ -481,6 +481,15 @@
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
     "note": "Diagrama da TV digital brasileira com a camada do Ginga."
   },
+  "zezinho": {
+    "file": "zezinho.jpg",
+    "title": "Fotografia ilustrativa de um computador histórico",
+    "source_url": null,
+    "author": "Imagem cedida por Matheus Medrado (Museu da Computação FACOM-UFU)",
+    "license": "Uso autorizado neste baralho",
+    "license_url": null,
+    "note": "Imagem ilustrativa; não é um registro confirmado do Zezinho do ITA."
+  },
   "cobra": {
     "file": "cobra.jpg",
     "title": "Computador Cobra 210",
