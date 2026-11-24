@@ -481,6 +481,60 @@
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
     "note": "Diagrama da TV digital brasileira com a camada do Ginga."
   },
+  "itautec": {
+    "file": "itautec.jpg",
+    "title": "Itautec em Jundaí..jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Itautec_em_Junda%C3%AD..jpg",
+    "author": "Fernando Silva",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "Unidade da Itautec em Jundiaí; a foto não é da época da fundação."
+  },
+  "rnp": {
+    "file": "rnp.jpg",
+    "title": "CCT - Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática (37213936064).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CCT_-_Comiss%C3%A3o_de_Ci%C3%AAncia%2C_Tecnologia%2C_Inova%C3%A7%C3%A3o%2C_Comunica%C3%A7%C3%A3o_e_Inform%C3%A1tica_(37213936064).jpg",
+    "author": "Geraldo Magela/Agência Senado",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "note": "Tadao Takahashi, que coordenou a criação da RNP, em audiência no Senado."
+  },
+  "lattes": {
+    "file": "lattes.jpg",
+    "title": "César Lattes (1954).tif",
+    "source_url": "https://commons.wikimedia.org/wiki/File:C%C3%A9sar_Lattes_(1954).tif",
+    "author": "Autor não identificado / Acervo do Arquivo Nacional",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-Brazil-URAA",
+    "note": "Retrato recortado do físico que dá nome à plataforma, do Fundo Correio da Manhã."
+  },
+  "conectiva-linux": {
+    "file": "conectiva-linux.jpg",
+    "title": "Éramos Hackers! Conectiva 2001 em Curitiba",
+    "source_url": "https://www.flickr.com/photos/24689807@N08/6287387385/",
+    "author": "Roberto Severo",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "note": "Foto de 2001 na Conectiva em Curitiba, posterior ao lançamento da versão Parolin."
+  },
+  "microsiga": {
+    "file": "microsiga.jpg",
+    "title": "Laércio Cosentino.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:La%C3%A9rcio_Cosentino.png",
+    "author": "CDTV",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "note": "Quadro de vídeo recortado de Laércio Cosentino, cofundador da Microsiga, na ABES Conference."
+  },
+  "bematech": {
+    "file": "bematech.jpg",
+    "title": "Scanner Bematech.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Scanner_Bematech.jpg",
+    "author": "Guigag1",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Foto recortada de um leitor de código de barras Aquila S-500 da Bematech, não da impressora original."
+  },
   "nubank": {
     "file": "nubank.jpg",
     "title": "Nubank logo.svg",
