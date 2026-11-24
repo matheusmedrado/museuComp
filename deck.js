@@ -198,8 +198,8 @@ function frontFace(entry, template = 'front') {
   return card;
 }
 
-function backFace(entry, start, end, template = 'back') {
-  const card = face(template);
+function backFace(entry, start, end) {
+  const card = face('back');
   setText(card, '.year', entry.year);
   setText(card, '.name', entry.name);
   setText(card, '.event', entry.event);
@@ -213,7 +213,9 @@ function backFace(entry, start, end, template = 'back') {
 function labsCard(entry, start, end) {
   const preview = document.getElementById('labs-preview');
   const front = frontFace(entry, 'labs-front');
-  const back = backFace(entry, start, end, 'labs-back');
+  const back = face('labs-back');
+  setText(back, '.year', entry.year);
+  back.querySelector('.draft').hidden = entry.verified;
   const originalFront = frontFace(entry);
   const originalBack = backFace(entry, start, end);
   preview.replaceChildren();
