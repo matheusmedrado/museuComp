@@ -15,12 +15,12 @@ o ano. Abra a [apresentação](index.html) para ver um resumo das regras e o pro
 Em **Imprimir baralho**, escolha papel **A4**, escala **100%**, sem cabeçalhos e rodapés
 e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda longa**:
 cada página de frentes é seguida pela página de versos com as colunas espelhadas.
-Corte nos limites das cartas de 63 × 88 mm. A última página reúne os créditos;
-mantenha-a junto ao baralho impresso.
+Corte nos limites das cartas de 63 × 88 mm. Os créditos vêm ao final;
+mantenha-os junto ao baralho impresso.
 
 ## Visual das cartas
 
-O visual aprovado no Labs agora é usado nas 19 cartas, na tela e na impressão.
+O visual aprovado no Labs é usado nas 60 cartas, na tela e na impressão.
 A frente traz imagem ditherizada, categoria, nome e dica, sem revelar o ano;
 o verso traz só o ano como resposta, com a marca **Timeline: Duvido!** e o rodapé
 **Museu da Computação**. Os dois modos usam o mesmo baralho: Bits podem ser
@@ -44,16 +44,17 @@ convert img/museu-logo.png -crop 1400x981+0+0 +repage -trim +repage img/museu-sy
 
 ## Conteúdo
 
-[cards.json](cards.json) contém as 19 cartas da exportação revisada de Matheus. Cada par
-de PNGs de origem é identificado no catálogo. `verified` indica que o nome, o texto e o
-ano foram conferidos contra essa exportação, não uma checagem histórica independente.
-As categorias foram inferidas pelo tema das cartas; a exportação não atribui
-dificuldade, por isso os níveis ficam em branco.
+[cards.json](cards.json) reúne as 19 cartas da exportação revisada de Matheus e
+41 novas cartas sobre a história da computação no Brasil e no mundo. Nas originais,
+`verified` indica revisão contra a exportação; nas novas, indica a conferência do
+ano do evento. O campo `source` registra os PNGs originais ou a fonte histórica
+da nova carta. Os níveis de dificuldade ficam em branco.
 
-O mesmo catálogo alimenta as versões de tela e de impressão. O campo `image` de
-cada carta aponta para uma imagem do Wikimedia Commons. O baralho ajusta o contraste
-e aplica dithering em três tons no navegador; se uma imagem não carregar, a carta
-usa sua ilustração SVG. A lista de créditos em [deck.html](deck.html#creditos) vem de
+O mesmo catálogo alimenta as versões de tela e de impressão. O campo `image` aponta
+para uma cópia local de uma imagem livre do Wikimedia Commons, quando disponível.
+O baralho ajusta o contraste e aplica dithering em três tons no navegador. Se não
+houver imagem ou ela não carregar, a carta usa a ilustração SVG de reserva.
+A lista de créditos em [deck.html](deck.html#creditos) vem de
 [img/cards/credits.json](img/cards/credits.json).
 
 Edite os dados em `cards.json`, as opções de dithering (`dither`) e as ilustrações

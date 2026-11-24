@@ -152,5 +152,315 @@
     "author": "NASA (fotógrafo não identificado)",
     "license": "Public domain",
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NASA"
+  },
+  "pascalina": {
+    "file": "pascalina.jpg",
+    "title": "Pascaline-CnAM 823-1-IMG 1506-black.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pascaline-CnAM_823-1-IMG_1506-black.jpg",
+    "author": "Rama",
+    "license": "CC BY-SA 3.0 fr",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/fr/deed.en",
+    "note": "Réplica ou exemplar histórico fotografado no Musée des Arts et Métiers."
+  },
+  "intel-4004": {
+    "file": "intel-4004.jpg",
+    "title": "Intel C4004 1a.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Intel_C4004_1a.jpg",
+    "author": "Christian Bassow",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "patinho-feio": {
+    "file": "patinho-feio.jpg",
+    "title": "Antonio Hélio Guerra Vieira e o Computador Patinho Feio.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_H%C3%A9lio_Guerra_Vieira_e_o_Computador_Patinho_Feio.jpg",
+    "author": "Comunicação Poli / Jornal da USP / USP",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "lncc-bitnet": {
+    "file": "lncc-bitnet.jpg",
+    "title": "Lncc-frente.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lncc-frente.jpg",
+    "author": "LongDouble",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+    "note": "Fachada do LNCC em Petrópolis; a conexão ocorreu no Rio de Janeiro."
+  },
+  "lua": {
+    "file": "lua.jpg",
+    "title": "Lua-Logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lua-Logo.svg",
+    "author": "Alexandre Nakonechnyj; equipe Lua",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo"
+  },
+  "urna-eletronica": {
+    "file": "urna-eletronica.jpg",
+    "title": "Eleição municipal 2016 em Itajubá 1.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Elei%C3%A7%C3%A3o_municipal_2016_em_Itajub%C3%A1_1.jpg",
+    "author": "Mateus S. Figueiredo",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Foto ilustrativa de uma eleição posterior."
+  },
+  "google": {
+    "file": "google.jpg",
+    "title": "Google Storage Server At Stanford (84006183).jpeg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Google_Storage_Server_At_Stanford_(84006183).jpeg",
+    "author": "Oliver Propst",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "iphone": {
+    "file": "iphone.jpg",
+    "title": "Original iPhone docked.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Original_iPhone_docked.jpg",
+    "author": "Andrew",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "pix": {
+    "file": "pix.jpg",
+    "title": "Pix logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pix_logo.svg",
+    "author": "Banco Central do Brasil",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo"
+  },
+  "chatgpt": {
+    "file": "chatgpt.jpg",
+    "title": "Sam Altman CropEdit James Tamim.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sam_Altman_CropEdit_James_Tamim.jpg",
+    "author": "Steve Jennings/Getty Images for TechCrunch",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "note": "Retrato posterior de Sam Altman, cofundador da OpenAI."
+  },
+  "serpro": {
+    "file": "serpro.jpg",
+    "title": "Serpro-entrance.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Serpro-entrance.jpg",
+    "author": "Rachmaninoff",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "Entrada de uma unidade do Serpro; foto ilustrativa."
+  },
+  "lei-informatica": {
+    "file": "lei-informatica.jpg",
+    "title": "Imagens de Brasília - Fachada do Palácio do Congresso Nacional (53457677994).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Imagens_de_Bras%C3%ADlia_-_Fachada_do_Pal%C3%A1cio_do_Congresso_Nacional_(53457677994).jpg",
+    "author": "Agência Senado",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "note": "Fachada do Congresso Nacional; não é um registro da aprovação da lei."
+  },
+  "positivo": {
+    "file": "positivo.jpg",
+    "title": "Positivo Informática logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Positivo_Inform%C3%A1tica_logo.svg",
+    "author": "Positivo Informática",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+    "note": "Marca da empresa; não é um registro da fundação."
+  },
+  "cgi-br": {
+    "file": "cgi-br.jpg",
+    "title": "Cgi.br.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Cgi.br.svg",
+    "author": "CGI.br",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo"
+  },
+  "marco-civil": {
+    "file": "marco-civil.jpg",
+    "title": "Fachada do Congresso Nacional (48079663532).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fachada_do_Congresso_Nacional_(48079663532).jpg",
+    "author": "Senado Federal",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "note": "Fachada do Congresso Nacional; não é um registro da aprovação da lei."
+  },
+  "lgpd": {
+    "file": "lgpd.jpg",
+    "title": "Conheça a Lei Geral de Proteção de Dados (LGPD).png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Conhe%C3%A7a_a_Lei_Geral_de_Prote%C3%A7%C3%A3o_de_Dados_(LGPD).png",
+    "author": "EPTrilhas",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "note": "Ilustração didática publicada após a sanção da lei."
+  },
+  "facom": {
+    "file": "facom.jpg",
+    "title": "CampiUFU.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:CampiUFU.jpg",
+    "author": "Lkcalabria",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "Montagem de campi da UFU em Uberlândia."
+  },
+  "game-boy": {
+    "file": "game-boy.jpg",
+    "title": "Game-Boy-Original.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Game-Boy-Original.jpg",
+    "author": "Evan-Amos",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self"
+  },
+  "python": {
+    "file": "python.jpg",
+    "title": "Guido van Rossum in PyConUS24.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_in_PyConUS24.jpg",
+    "author": "Kushal Das",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Retrato posterior de Guido van Rossum, autor do Python."
+  },
+  "linux": {
+    "file": "linux.jpg",
+    "title": "LinuxCon Europe Linus Torvalds 03 (cropped).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:LinuxCon_Europe_Linus_Torvalds_03_(cropped).jpg",
+    "author": "Krd; recorte de Von Sprat",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "note": "Retrato posterior de Linus Torvalds, autor do kernel Linux."
+  },
+  "mosaic": {
+    "file": "mosaic.jpg",
+    "title": "NCSA Mosaic Browser Screenshot.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:NCSA_Mosaic_Browser_Screenshot.png",
+    "author": "Charles Severance",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "java": {
+    "file": "java.jpg",
+    "title": "James Gosling 2008.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:James_Gosling_2008.jpg",
+    "author": "Peter Campbell",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Retrato de James Gosling, um dos criadores do Java."
+  },
+  "usb": {
+    "file": "usb.jpg",
+    "title": "USB-A demonstration.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:USB-A_demonstration.jpg",
+    "author": "im_tau",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "note": "Conector USB tipo A; foto ilustrativa."
+  },
+  "wifi": {
+    "file": "wifi.jpg",
+    "title": "Linksys-Wireless-G-Router.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Linksys-Wireless-G-Router.jpg",
+    "author": "Evan-Amos",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+    "note": "Roteador de uma geração posterior do padrão IEEE 802.11."
+  },
+  "bluetooth": {
+    "file": "bluetooth.jpg",
+    "title": "Ericsson Bluetooth module.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ericsson_Bluetooth_module.jpg",
+    "author": "Nixdorf",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Módulo Bluetooth da Ericsson; foto ilustrativa."
+  },
+  "wikipedia": {
+    "file": "wikipedia.jpg",
+    "title": "First preserved Main Page of Wikipedia.jpeg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:First_preserved_Main_Page_of_Wikipedia.jpeg",
+    "author": "Colaboradores da Wikipédia",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Primeira página principal preservada da Wikipédia em inglês."
+  },
+  "aws-s3": {
+    "file": "aws-s3.jpg",
+    "title": "Amazon-S3-Logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Amazon-S3-Logo.svg",
+    "author": "Amazon Web Services",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+    "note": "Ícone do serviço; não é um registro do lançamento."
+  },
+  "android": {
+    "file": "android.jpg",
+    "title": "HTC Dream Orange FR.jpeg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:HTC_Dream_Orange_FR.jpeg",
+    "author": "Akela NDE",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "bitcoin": {
+    "file": "bitcoin.jpg",
+    "title": "Bitcoin.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bitcoin.svg",
+    "author": "Satoshi Nakamoto; Bitboy",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo"
+  },
+  "raspberry-pi": {
+    "file": "raspberry-pi.jpg",
+    "title": "Front of Raspberry Pi.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Front_of_Raspberry_Pi.jpg",
+    "author": "Maiakaat",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "transformer": {
+    "file": "transformer.jpg",
+    "title": "Transformer, full architecture.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Transformer%2C_full_architecture.png",
+    "author": "dvgodoy",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "note": "Diagrama da arquitetura Transformer."
+  },
+  "gpt-3": {
+    "file": "gpt-3.jpg",
+    "title": "Gpt-transformer-block.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Gpt-transformer-block.png",
+    "author": "Marxav",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "note": "Diagrama de um bloco Transformer usado na família GPT; imagem ilustrativa."
+  },
+  "z3": {
+    "file": "z3.jpg",
+    "title": "Z3 Deutsches Museum b.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Z3_Deutsches_Museum_b.jpg",
+    "author": "Venusianer; edição de Georgfotoart",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "note": "Réplica do Z3 no Deutsches Museum."
+  },
+  "colossus": {
+    "file": "colossus.jpg",
+    "title": "Colossus.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Colossus.jpg",
+    "author": "Autor não identificado",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-UKGov"
+  },
+  "arpanet": {
+    "file": "arpanet.jpg",
+    "title": "1969 ARPANET BBN IMP.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:1969_ARPANET_BBN_IMP.jpg",
+    "author": "DARPA (fonte da foto)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+    "note": "O IMP operava como um nó da rede."
+  },
+  "ibm-pc": {
+    "file": "ibm-pc.jpg",
+    "title": "Ibm 5150 inthebox edit.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ibm_5150_inthebox_edit.jpg",
+    "author": "okqubit.net",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-author"
   }
 }
