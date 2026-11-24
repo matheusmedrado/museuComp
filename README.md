@@ -12,7 +12,8 @@ o ano. Abra a [apresentação](index.html) para ver as regras e o protótipo ori
 Em **Imprimir baralho**, escolha papel **A4**, escala **100%**, sem cabeçalhos e rodapés
 e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda longa**:
 cada página de frentes é seguida pela página de versos com as colunas espelhadas.
-Corte nos limites das cartas de 63 × 88 mm.
+Corte nos limites das cartas de 63 × 88 mm. A última página reúne os créditos;
+mantenha-a junto ao baralho impresso.
 
 ## Conteúdo
 

@@ -27,14 +27,14 @@
     </header>
     <p id="status" role="status">Carregando cartas…</p>
     <ul id="deck" class="deck" aria-label="Cartas Timeline"></ul>
-    <section id="creditos" class="credits" aria-labelledby="credits-title">
-      <h2 id="credits-title">Créditos das imagens</h2>
-      <p>As imagens foram reenquadradas e receberam dithering em dois tons. As versões derivadas de imagens CC BY-SA mantêm a licença indicada.</p>
-      <p id="credits-status" role="status" hidden></p>
-      <ul id="image-credits"></ul>
-    </section>
   </main>
   <div id="print-deck" aria-hidden="true"></div>
+  <section id="creditos" class="credits" aria-labelledby="credits-title">
+    <h2 id="credits-title">Créditos das imagens</h2>
+    <p>As imagens foram redimensionadas, reenquadradas e tratadas com dithering em dois tons. As versões derivadas de imagens CC BY-SA mantêm a licença indicada.</p>
+    <p id="credits-status" role="status" hidden></p>
+    <ul id="image-credits"></ul>
+  </section>
 
   <template id="front">
     <div class="card front">
@@ -69,7 +69,7 @@
   </template>
   <template id="image-credit">
     <li>
-      <strong class="credit-card"></strong> · <span class="credit-author"></span> · <a class="credit-license"></a><br>
+      <strong class="credit-card"></strong> · <span class="credit-author"></span> · <a class="credit-license"></a>
       <a class="credit-source"></a>
       <p class="credit-note" hidden></p>
     </li>
