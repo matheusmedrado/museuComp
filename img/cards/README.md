@@ -1,8 +1,10 @@
 # Imagens das cartas
 
-Imagens do Wikimedia Commons para o **Timeline**. As cópias foram redimensionadas
-quando necessário. O baralho aplica dithering no navegador sem alterar estes
-arquivos. A lista completa de créditos está em [credits.json](credits.json) e no
+Imagens do **Timeline**: arquivos livres do Wikimedia Commons e do Flickr, ou
+imagens cedidas para uso no baralho, sem licença livre indicada. As cópias foram
+redimensionadas ou recortadas quando necessário. O baralho aplica dithering no
+navegador sem alterar estes arquivos. A lista completa de créditos está em
+[credits.json](credits.json) e no
 [baralho](../../deck.html#creditos). A tabela abaixo cobre as 19 cartas originais.
 
 **An Wang:** a foto mostra um módulo de memória de núcleo magnético do PDP-5 para
