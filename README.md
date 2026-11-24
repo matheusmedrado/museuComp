@@ -20,7 +20,7 @@ mantenha-os junto ao baralho impresso.
 
 ## Visual das cartas
 
-O visual aprovado no Labs é usado nas 60 cartas, na tela e na impressão.
+O visual aprovado no Labs é usado nas 66 cartas, na tela e na impressão.
 A frente traz imagem ditherizada, categoria, nome e dica, sem revelar o ano;
 o verso traz só o ano como resposta, com a marca **Timeline: Duvido!** e o rodapé
 **Museu da Computação**. Os dois modos usam o mesmo baralho: Bits podem ser
@@ -45,7 +45,7 @@ convert img/museu-logo.png -crop 1400x981+0+0 +repage -trim +repage img/museu-sy
 ## Conteúdo
 
 [cards.json](cards.json) reúne as 19 cartas da exportação revisada de Matheus e
-41 novas cartas sobre a história da computação no Brasil e no mundo. Nas originais,
+47 novas cartas sobre a história da computação no Brasil e no mundo. Nas originais,
 `verified` indica revisão contra a exportação; nas novas, indica a conferência do
 ano do evento. O campo `source` registra os PNGs originais ou a fonte histórica
 da nova carta. Os níveis de dificuldade ficam em branco.
