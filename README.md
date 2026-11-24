@@ -18,15 +18,21 @@ cada página de frentes é seguida pela página de versos com as colunas espelha
 Corte nos limites das cartas de 63 × 88 mm. A última página reúne os créditos;
 mantenha-a junto ao baralho impresso.
 
-## Labs
+## Visual das cartas
 
-Em [Labs](deck.html#labs), a carta de Alan Turing mostra um estudo de frente e verso
-mais limpo, com a mesma imagem ditherizada. Use **Comparar com a versão atual** para
-alternar os dois visuais. O experimento usa os dados de `cards.json` e moldes próprios
-em `deck.html`, com estilos isolados em `.labs-card` no `deck.css`; não altera as
-19 cartas do baralho nem sua impressão. Para experimentar outra carta, troque o
-identificador escolhido em `loadDeck()` no `deck.js`.
-O logo fornecido pelo museu está em `img/museu-logo.png`. O Labs usa só seu símbolo,
+O visual aprovado no Labs agora é usado nas 19 cartas, na tela e na impressão.
+A frente traz imagem ditherizada, categoria, nome e dica, sem revelar o ano;
+o verso traz só o ano como resposta, com a marca **Timeline: Duvido!** e o rodapé
+**Museu da Computação**. Os dois modos usam o mesmo baralho: Bits podem ser
+representados por tampinhas ou moedas; não são necessárias cartas de ação.
+
+Frentes e versos são gerados pelos moldes `front` e `back` em `deck.html`,
+preenchidos a partir de `cards.json` em `deck.js`. O Labs e seu comparador foram
+retirados porque a proposta passou a ser o visual do baralho completo.
+Na tela as cartas crescem com o texto; na impressão mantêm 63 × 88 mm, com a
+imagem ajustada para acomodar a dica e os créditos sem ultrapassar o corte.
+
+O logo fornecido pelo museu está em `img/museu-logo.png`. As cartas usam só seu símbolo,
 recortado sem redesenho em `img/museu-symbol.png`, com transparência preservada e
 branco aplicado por CSS para contrastar com o azul `#2E3192`. Ele fica na área de
 texto, fora do retrato; a tipografia continua sem serifa. Para refazer o recorte
