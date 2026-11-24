@@ -105,6 +105,10 @@ h1 span { color: var(--cyan); }
 .labs-preview figure { display: grid; margin: 0; container-type: inline-size; }
 .labs-preview figcaption { margin-bottom: .85rem; color: #c3d6d5; font: .65rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .1em; }
 .labs-preview .card { box-shadow: 0 1rem 2rem #08141f35; }
+.labs-preview .card { display: flex; aspect-ratio: auto; min-height: calc(100cqw * 88 / 63); }
+.labs-preview .frame { flex: 1; height: auto; min-width: 0; overflow: visible; }
+.labs-preview .card-head, .labs-preview .card-foot { flex-wrap: wrap; row-gap: .35em; }
+.labs-preview .art { height: auto; aspect-ratio: 4 / 3; }
 .labs-foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .8rem; padding-top: 1.25rem; border-top: 1px solid #ffffff20; }
 .labs-foot p { margin: 0; color: #bfcbd1; font-size: .8rem; }
 #labs-compare { background: transparent; color: var(--paper); border: 1px solid #a5c8ca75; border-radius: 2rem; padding: .65rem 1rem; font-size: .75rem; }
@@ -128,7 +132,7 @@ h1 span { color: var(--cyan); }
 .labs-card.back { background: var(--ink); color: var(--paper); }
 .labs-card.back .frame { background: none; }
 .labs-card.back .card-head { border-color: #f4f2e940; }
-.labs-card .answer { align-items: stretch; justify-content: start; text-align: left; min-height: 0; }
+.labs-card .answer { align-items: stretch; justify-content: start; text-align: left; }
 .labs-date { position: relative; padding: 13% 0 8%; border-bottom: 1px solid #f4f2e940; }
 .labs-date::after { content: ''; position: absolute; width: 18%; aspect-ratio: 1; top: 12%; right: 0; background-image: radial-gradient(#a4c9c9 1px, transparent 1px); background-size: 4px 4px; mask-image: linear-gradient(135deg, transparent, #000); }
 .labs-card .year-label { color: #adcaca; font: 400 3.2cqw/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
@@ -144,15 +148,15 @@ h1 span { color: var(--cyan); }
 .labs-card .draft { align-self: start; margin-top: 4%; font-size: 3cqw; }
 .labs-card.front { padding: 0; background: #162c31; color: var(--paper); overflow: hidden; }
 .labs-card.front .frame { overflow: hidden; }
-.labs-card.front .art { height: 55%; border-radius: 0; background: #dbfaff; }
+.labs-card.front .art { height: auto; aspect-ratio: 63 / 48.4; border-radius: 0; background: #dbfaff; }
 .labs-card.front .art canvas { object-fit: cover; object-position: center; }
-.labs-art-head { position: absolute; inset: 0 0 auto; z-index: 1; display: flex; justify-content: space-between; padding: 5% 6%; color: #dbfaff; background: linear-gradient(#123f44d9, #123f4400); font: 650 3cqw/1 var(--mono); letter-spacing: -.04em; }
+.labs-art-head { position: absolute; inset: 0 0 auto; z-index: 1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: .35em; padding: 5% 6%; color: #dbfaff; background: linear-gradient(#123f44d9, #123f4400); font: 650 3cqw/1 var(--mono); letter-spacing: -.04em; }
 .labs-art-head > span { font-weight: 400; font-size: 2.2cqw; letter-spacing: 0; }
 .labs-divider { position: relative; height: 0; border-top: 2px solid #8dc7c4; margin-top: -1px; z-index: 2; }
 .labs-divider > span { position: absolute; left: 6%; top: 0; transform: translateY(-50%); display: grid; place-items: center; width: 10cqw; height: 10cqw; border: 2px solid #8dc7c4; border-radius: 50%; background: #162c31; color: #a9d7d2; font: 500 6cqw/1 Georgia, serif; }
 .labs-divider::after { content: ''; position: absolute; top: 0; right: 8%; width: 2cqw; height: 2cqw; border: 1px solid #8dc7c4; background: #162c31; transform: translateY(-50%) rotate(45deg); }
 .labs-card.front .labs-copy { padding: 7% 6% 4%; }
-.labs-card.front .labs-meta { margin: 0 0 4%; padding-left: 13%; color: #a4c9c6; font-size: 2.4cqw; }
+.labs-card.front .labs-meta { margin: 0 0 4%; padding-left: 13%; color: #a4c9c6; font-size: 2.4cqw; flex-wrap: wrap; gap: .35em; }
 .labs-card.front .name { margin: 0 0 3%; font-size: 7.6cqw; font-weight: 550; letter-spacing: -.035em; }
 .labs-card.front .clue { color: #d0deda; font-size: 3.65cqw; line-height: 1.4; }
 .labs-card.front .card-foot { padding: 4% 0 0; margin-inline: 6%; border-color: #f4f2e92e; font-size: 2.6cqw; }
