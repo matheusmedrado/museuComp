@@ -23,6 +23,8 @@ alternar os dois visuais. O experimento usa os dados de `cards.json` e moldes pr
 em `deck.html`, com estilos isolados em `.labs-card` no `deck.css`; não altera as
 19 cartas do baralho nem sua impressão. Para experimentar outra carta, troque o
 identificador escolhido em `loadDeck()` no `deck.js`.
+O logo fornecido pelo museu está em `img/museu-logo.png`; a proposta usa o azul
+`#2E3192` do arquivo original e tipografia sem serifa.
 
 ## Conteúdo
 
