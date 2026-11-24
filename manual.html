@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual de Timeline: Duvido! · Museu da Computação</title>
+  <link rel="stylesheet" href="manual.css">
+  <script src="manual.js" defer></script>
+</head>
+<body>
+  <nav class="toolbar" aria-label="Navegação do manual">
+    <a href="index.html#4">← Apresentação</a>
+    <a href="deck.html">Ver o baralho</a>
+    <button type="button" id="print-manual" hidden>Imprimir manual</button>
+  </nav>
+
+  <main>
+    <article class="page" aria-labelledby="manual-title">
+      <header class="hero">
+        <div class="brand">
+          <img src="img/museu-symbol.png" width="1321" height="864" alt="">
+          <span>Museu da Computação <small>FACOM · UFU</small></span>
+        </div>
+        <p class="label">Manual de jogo</p>
+        <h1 id="manual-title">Timeline: <span>Duvido!</span></h1>
+        <p>Monte a linha do tempo da computação sem olhar os anos. Se uma jogada parecer fora de ordem, mande um <strong>Duvido!</strong></p>
+      </header>
+
+      <section class="rule" aria-labelledby="setup-title">
+        <h2 id="setup-title"><span class="number">01</span> Prepare a mesa</h2>
+        <p class="material"><strong>Material:</strong> o baralho e cerca de 15 fichas de Bit (tampinhas ou moedas servem).</p>
+        <div class="setup">
+          <ol>
+            <li>Embaralhe e revele o ano de uma carta no centro: é o início da linha.</li>
+            <li>Com mais de 4 pessoas, formem 2 a 4 equipes de 2 ou 3. Cada equipe joga como um jogador e compartilha a mão e os Bits.</li>
+            <li>Distribua as mãos e dê 1 Bit a cada jogador ou equipe. Deixe as mãos na mesa com a frente para cima. O restante vira o monte de compra, também com os anos escondidos.</li>
+            <li>Escolham quem começa e sigam em sentido horário.</li>
+          </ol>
+          <table>
+            <caption>Cartas iniciais</caption>
+            <thead>
+              <tr><th scope="col">Jogadores ou equipes</th><th scope="col">Cartas por mão</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">2</th><td>5</td></tr>
+              <tr><th scope="row">3</th><td>4</td></tr>
+              <tr><th scope="row">4</th><td>3</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="rule" aria-labelledby="turn-title">
+        <h2 id="turn-title"><span class="number">02</span> Na sua vez</h2>
+        <ol class="turn">
+          <li><strong>Leia</strong> o nome e a dica de uma carta da sua mão em voz alta.</li>
+          <li><strong>Encaixe</strong> a carta sem virar: antes, entre ou depois das cartas da linha.</li>
+          <li><strong>Duvido!</strong> O próximo jogador pode duvidar antes de você virar. No Explorador, qualquer outro jogador pode duvidar: vale quem falar primeiro.</li>
+          <li><strong>Vire e confira.</strong> A linha vai do ano mais antigo ao mais recente. Se o ano empatar, qualquer ordem vale.</li>
+        </ol>
+        <figure class="example" id="example" hidden>
+          <ol class="timeline">
+            <li class="mini" id="example-before"><strong class="year"></strong><span class="name"></span></li>
+            <li class="mini guess" id="example-guess">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="8" y="8" width="16" height="16" rx="2"/><path d="M12 3v5m8-5v5m-8 16v5m8-5v5M3 12h5m-5 8h5m16-8h5m-5 8h5"/></svg>
+              <strong>????</strong><span class="name"></span>
+            </li>
+            <li class="mini" id="example-after"><strong class="year"></strong><span class="name"></span></li>
+          </ol>
+          <figcaption><strong>Exemplo:</strong> você encaixa <span id="example-picked"></span> entre as duas cartas. Ao virar, aparece <strong id="example-year"></strong>: acertou!</figcaption>
+        </figure>
+      </section>
+
+      <section class="rule" aria-labelledby="challenge-title">
+        <h2 id="challenge-title"><span class="number">03</span> O que acontece ao virar?</h2>
+        <table class="outcomes">
+          <thead>
+            <tr><th scope="col">Resultado</th><th scope="col">O que fazer</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Acertou, ninguém duvidou</th><td>A carta fica na linha com o ano à mostra.</td></tr>
+            <tr><th scope="row">Acertou e alguém duvidou</th><td>A carta fica na linha. Quem duvidou compra 1 carta de castigo e você ganha 1 Bit.</td></tr>
+            <tr><th scope="row">Errou</th><td>Descarte a carta e compre 1. Se alguém duvidou, essa pessoa ganha 1 Bit.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <footer class="page-foot"><span>Museu da Computação · FACOM/UFU</span><span>01 / 02</span></footer>
+    </article>
+
+    <article class="page" aria-labelledby="strategy-title">
+      <header class="hero continuation">
+        <p class="label">Timeline: Duvido!</p>
+        <h2 id="strategy-title">Bits, modos <span>e fim de jogo</span></h2>
+        <p>Escolha o que fazer antes de encaixar. Se for dar um palpite de Ano cravado, anuncie na hora do encaixe.</p>
+      </header>
+
+      <section class="rule" aria-labelledby="bits-title">
+        <h2 id="bits-title"><span class="number">04</span> Bits e jogadas especiais</h2>
+        <div class="tiles">
+          <section class="tile">
+            <p class="tag">1 Bit</p>
+            <h3>Trocar</h3>
+            <p>Descarte uma carta da mão e compre outra. Se precisar embaralhar o descarte, deixe a carta que acabou de descartar de fora. Sem outra carta disponível, não dá para trocar.</p>
+          </section>
+          <section class="tile">
+            <p class="tag">2 Bits</p>
+            <h3>Criptografar</h3>
+            <p>Ninguém pode duvidar da sua jogada neste turno.</p>
+          </section>
+          <section class="tile">
+            <p class="tag">Grátis</p>
+            <h3>Aposta dupla</h3>
+            <p>Leia e encaixe 2 cartas sem virar. Elas valem como uma só jogada para o Duvido. Se acertar as duas, elas ficam e você ganha 1 Bit extra. Se errar qualquer uma, descarte as duas e compre 2, em vez de 1.</p>
+          </section>
+          <section class="tile">
+            <p class="tag">Grátis</p>
+            <h3>Ano cravado</h3>
+            <p>Ao encaixar, anuncie a década (por exemplo, anos 1940) ou, no Hacker, o ano exato. Acertou o palpite? Ganhe 1 Bit. Na Aposta dupla, diga de qual carta você está dando o palpite.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="rule" aria-labelledby="modes-title">
+        <h2 id="modes-title"><span class="number">05</span> Escolha o modo</h2>
+        <div class="tiles">
+          <section class="tile">
+            <p class="tag">Ensino fundamental · 6+</p>
+            <h3>Explorador</h3>
+            <p>Jogue com monitor do museu e leia a dica em voz alta. Use só Duvido (qualquer outro jogador, o primeiro a falar), Trocar e Ano cravado por década.</p>
+          </section>
+          <section class="tile">
+            <p class="tag">Estudantes de computação</p>
+            <h3>Hacker</h3>
+            <p>Todas as regras valem. Só o próximo jogador pode dizer Duvido, e Ano cravado exige o ano exato.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="rule" aria-labelledby="finish-title">
+        <h2 id="finish-title"><span class="number">06</span> Fim de jogo</h2>
+        <p>Quando alguém esvaziar a mão, começa a última rodada. Os demais jogam mais uma vez, até a vez voltar a quem esvaziou a mão. Quem tiver menos cartas ganha. No empate, vence quem tiver mais Bits. Se empatar nos Bits também, a vitória é compartilhada.</p>
+        <div class="note">
+          <h3>O monte acabou?</h3>
+          <p>Embaralhe o descarte e faça um monte novo. Se não houver cartas para cumprir uma compra de castigo, quem recebeu o castigo perde 1 Bit por carta que faltou, até onde seu saldo permitir.</p>
+        </div>
+      </section>
+      <footer class="page-foot"><span>Museu da Computação · FACOM/UFU</span><span>02 / 02</span></footer>
+    </article>
+  </main>
+</body>
+</html>

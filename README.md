@@ -3,6 +3,7 @@
 **Timeline: Duvido!** é um jogo de cartas em português sobre a história da computação, para o Museu da Computação da FACOM-UFU.
 
 Veja as [regras completas](REGRAS.md) para jogar nos modos Explorador e Hacker.
+Para levar as regras à mesa, abra o [manual para imprimir](manual.html) pelo servidor local e escolha **Imprimir manual** em papel **A4** (duas páginas).
 
 ## Ver e imprimir o baralho
 
