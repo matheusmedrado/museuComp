@@ -23,8 +23,15 @@ alternar os dois visuais. O experimento usa os dados de `cards.json` e moldes pr
 em `deck.html`, com estilos isolados em `.labs-card` no `deck.css`; não altera as
 19 cartas do baralho nem sua impressão. Para experimentar outra carta, troque o
 identificador escolhido em `loadDeck()` no `deck.js`.
-O logo fornecido pelo museu está em `img/museu-logo.png`; a proposta usa o azul
-`#2E3192` do arquivo original e tipografia sem serifa.
+O logo fornecido pelo museu está em `img/museu-logo.png`. O Labs usa só seu símbolo,
+recortado sem redesenho em `img/museu-symbol.png`, com transparência preservada e
+branco aplicado por CSS para contrastar com o azul `#2E3192`. Ele fica na área de
+texto, fora do retrato; a tipografia continua sem serifa. Para refazer o recorte
+com ImageMagick (opcional, não necessário para abrir o baralho):
+
+```sh
+convert img/museu-logo.png -crop 1400x981+0+0 +repage -trim +repage img/museu-symbol.png
+```
 
 ## Conteúdo
 
