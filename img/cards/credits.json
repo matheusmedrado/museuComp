@@ -481,6 +481,15 @@
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
     "note": "Diagrama da TV digital brasileira com a camada do Ginga."
   },
+  "cobra": {
+    "file": "cobra.jpg",
+    "title": "Computador Cobra 210",
+    "source_url": null,
+    "author": "Imagem cedida por Matheus Medrado (Museu da Computação FACOM-UFU)",
+    "license": "Uso autorizado neste baralho",
+    "license_url": null,
+    "note": "O Cobra 210 ilustra a linha de computadores da empresa; a foto não é da época da fundação."
+  },
   "itautec": {
     "file": "itautec.jpg",
     "title": "Itautec em Jundaí..jpg",

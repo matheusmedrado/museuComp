@@ -154,8 +154,8 @@ function showCredits(entries, credits) {
     setText(item, '.credit-author', credit.author);
     setText(item, '.credit-license', licenseName(credit));
     setText(item, '.credit-source', credit.title);
-    item.querySelector('.credit-license').href = credit.license_url;
-    item.querySelector('.credit-source').href = credit.source_url;
+    if (credit.license_url) item.querySelector('.credit-license').href = credit.license_url;
+    if (credit.source_url) item.querySelector('.credit-source').href = credit.source_url;
     if (credit.note) {
       setText(item, '.credit-note', credit.note);
       item.querySelector('.credit-note').hidden = false;

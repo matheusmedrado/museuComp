@@ -51,7 +51,8 @@ ano do evento. O campo `source` registra os PNGs originais ou a fonte histórica
 da nova carta. Os níveis de dificuldade ficam em branco.
 
 O mesmo catálogo alimenta as versões de tela e de impressão. O campo `image` aponta
-para uma cópia local de uma imagem livre, quando disponível.
+para uma cópia local de uma imagem livre ou cedida para uso no baralho, quando
+disponível.
 O baralho ajusta o contraste e aplica dithering em três tons no navegador. Se não
 houver imagem ou ela não carregar, a carta usa a ilustração SVG de reserva.
 A lista de créditos em [deck.html](deck.html#creditos) vem de
