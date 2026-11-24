@@ -1,13 +1,15 @@
 # museuComp
 
-**Timeline** é um jogo de cartas em português sobre a história da computação, para o Museu da Computação da FACOM-UFU.
+**Timeline: Duvido!** é um jogo de cartas em português sobre a história da computação, para o Museu da Computação da FACOM-UFU.
+
+Veja as [regras completas](REGRAS.md) para jogar nos modos Explorador e Hacker.
 
 ## Ver e imprimir o baralho
 
 Na raiz do repositório, execute `python3 -m http.server 8000` e abra
 [http://localhost:8000/deck.html](http://localhost:8000/deck.html).
 Não há dependências nem etapa de build. Clique na carta ou use **Virar carta** para conferir
-o ano. Abra a [apresentação](index.html) para ver as regras e o protótipo original.
+o ano. Abra a [apresentação](index.html) para ver um resumo das regras e o protótipo original.
 
 Em **Imprimir baralho**, escolha papel **A4**, escala **100%**, sem cabeçalhos e rodapés
 e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda longa**:
