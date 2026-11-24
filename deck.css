@@ -38,6 +38,10 @@ h1 span { color: var(--cyan); }
 .deck .frame { flex: 1; min-width: 0; height: auto; overflow: visible; }
 .deck .art { height: auto; aspect-ratio: 4 / 3; }
 .deck .card-head, .deck .card-foot { flex-wrap: wrap; row-gap: .35em; }
+.credits { border-top: 1px solid #ffffff35; padding-bottom: 3rem; }
+.credits ul { padding-left: 1.25rem; overflow-wrap: anywhere; }
+.credits li + li { margin-top: .75rem; }
+.credit-note { margin: .25rem 0 0; }
 .flip { display: block; width: 100%; margin-top: .5rem; padding: .45rem; border: 1px solid #ffffff50; border-radius: .4rem; color: var(--cyan); background: transparent; }
 .flip:hover { background: #ffffff14; }
 
@@ -55,6 +59,7 @@ h1 span { color: var(--cyan); }
 .card-head span:last-child { color: var(--cyan); }
 .art { position: relative; margin: 0 3%; height: 51%; flex: none; background: #dbfaff; clip-path: polygon(0 0, 91% 0, 91% 5%, 96% 5%, 96% 10%, 100% 10%, 100% 100%, 9% 100%, 9% 95%, 4% 95%, 4% 90%, 0 90%); }
 .art svg { display: block; width: 100%; height: 100%; }
+.art canvas { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; image-rendering: pixelated; }
 .category { position: absolute; z-index: 1; top: 6%; left: 4%; padding: .35em .6em; border-radius: .25em; background: var(--navy); font: 700 3.5cqw/1.15 var(--mono); text-transform: uppercase; }
 .name { margin: 4% 4% 1.5%; font-size: 8cqw; line-height: 1; letter-spacing: -.04em; overflow-wrap: anywhere; }
 .clue, .event { margin: 0 4%; font-size: 4.5cqw; line-height: 1.22; }
@@ -64,6 +69,7 @@ h1 span { color: var(--cyan); }
 .difficulty, .pips { display: flex; align-items: center; gap: .3em; }
 .pips i { display: block; width: .7em; height: .7em; border: 1px solid var(--cyan); }
 .pips .on { background: var(--cyan); }
+.image-credit { margin: 0 4% 3%; color: #e5e6f6; font: 3cqw/1.15 var(--mono); overflow-wrap: anywhere; }
 .back .frame { background-image: linear-gradient(#ffffff13 1px, transparent 1px), linear-gradient(90deg, #ffffff13 1px, transparent 1px); background-size: 5cqw 5cqw; }
 .answer { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; flex: 1; }
 .year-label { font: 700 4cqw/1 var(--mono); color: var(--cyan); letter-spacing: .1em; }
@@ -99,4 +105,5 @@ h1 span { color: var(--cyan); }
   }
   .print-sheet:last-child { break-after: auto; }
   .print-sheet .card { width: 63mm; height: 88mm; border: .2mm solid white; }
+  .print-sheet .art { height: 47%; }
 }
