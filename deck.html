@@ -3,14 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Baralho Timeline · Museu da Computação FACOM-UFU</title>
+  <title>Baralho Timeline: Duvido! · Museu da Computação FACOM-UFU</title>
   <link rel="stylesheet" href="deck.css">
   <script src="deck.js" defer></script>
 </head>
 <body>
   <header class="site-head">
     <a href="index.html">Museu da Computação <span>· FACOM-UFU</span></a>
-    <a href="#labs">Labs <span>· novo visual</span></a>
     <a href="#creditos">Créditos das imagens</a>
     <a href="index.html#3">Como se joga ↗</a>
   </header>
@@ -18,32 +17,16 @@
     <header class="deck-head">
       <div>
         <p class="eyebrow">// o baralho</p>
-        <h1>TIME<span>LINE</span></h1>
-        <p>História da computação, uma carta de cada vez.</p>
+        <h1>TIME<span>LINE</span><small>Duvido!</small></h1>
+        <p>Encaixe na história da computação. Alguém duvida?</p>
       </div>
       <div class="print-action">
         <button id="print" type="button" disabled>Imprimir baralho</button>
         <p>A4 · frente e verso · virar pela borda longa · escala 100%</p>
       </div>
     </header>
-    <section id="labs" class="labs" aria-labelledby="labs-title">
-      <header class="labs-head">
-        <div>
-          <p class="eyebrow">Labs / 01</p>
-          <h2 id="labs-title">Um novo olhar para o tempo.</h2>
-          <p>Uma carta, duas faces. Um estudo visual para o Timeline — o baralho abaixo continua igual.</p>
-        </div>
-        <span class="labs-badge">Em experimentação</span>
-      </header>
-      <div class="labs-preview" id="labs-preview" aria-busy="true">
-        <p id="labs-status" role="status">Preparando a carta experimental…</p>
-      </div>
-      <footer class="labs-foot">
-        <p>Mais espaço para a imagem. A mesma textura.</p>
-        <button id="labs-compare" type="button" aria-pressed="false" aria-controls="labs-preview" disabled>Comparar com a versão atual</button>
-      </footer>
-    </section>
-    <h2 class="deck-title" id="deck-title">O baralho <span>· versão atual</span></h2>
+    <h2 class="deck-title" id="deck-title">O baralho <span>· frente: nome e dica · verso: ano</span></h2>
+    <p class="play-note">Na mesa, deixe as frentes à mostra e os anos escondidos. Leia o nome e a dica, encaixe na linha do tempo e espere o Duvido! antes de virar. <a href="index.html#3">Como se joga ↗</a></p>
     <p id="status" role="status">Carregando cartas…</p>
     <ul id="deck" class="deck" aria-labelledby="deck-title"></ul>
   </main>
@@ -58,14 +41,14 @@
   <template id="front">
     <div class="card front">
       <div class="frame">
-        <div class="card-head"><span>Museu da Computação</span><span>Timeline</span></div>
-        <div class="art"><span class="category"></span></div>
-        <h2 class="name"></h2>
-        <p class="clue"></p>
-        <div class="card-foot">
-          <span class="unknown">ANO <b>????</b></span>
-          <span class="difficulty"><span class="level"></span><span class="pips" aria-hidden="true"></span></span>
+        <div class="art"></div>
+        <div class="card-divider" aria-hidden="true"><span>?</span></div>
+        <div class="card-copy">
+          <div class="card-meta"><span class="category"></span><span class="difficulty" hidden><span class="level"></span><span class="pips" aria-hidden="true"></span></span><img class="museum-symbol" src="img/museu-symbol.png" alt="Museu da Computação" width="1321" height="864"></div>
+          <h2 class="name"></h2>
+          <p class="clue"></p>
         </div>
+        <div class="card-foot"><span>Timeline: Duvido!</span><span class="unknown" aria-label="Ano desconhecido">????</span></div>
         <small class="image-credit" hidden></small>
       </div>
     </div>
@@ -73,16 +56,12 @@
   <template id="back">
     <div class="card back">
       <div class="frame">
-        <div class="card-head"><span>Museu da Computação</span><span>Timeline</span></div>
+        <div class="card-head"><span class="wordmark">Timeline: Duvido!</span><img class="museum-symbol" src="img/museu-symbol.png" alt="Museu da Computação" width="1321" height="864"></div>
         <div class="answer">
-          <span class="year-label">// ano</span>
-          <p class="year"></p>
-          <h2 class="name"></h2>
-          <p class="event"></p>
-          <div class="ruler" aria-hidden="true"><span class="start"></span><span class="track"><i></i></span><span class="end"></span></div>
+          <div class="card-date"><p class="year"></p></div>
           <small class="draft" hidden>Ano a confirmar</small>
         </div>
-        <span class="end-mark" aria-hidden="true">■ ■ ■</span>
+        <div class="back-foot"><span>Museu da Computação</span><span>FACOM · UFU</span></div>
       </div>
     </div>
   </template>
@@ -92,30 +71,6 @@
       <a class="credit-source"></a>
       <p class="credit-note" hidden></p>
     </li>
-  </template>
-  <template id="labs-front">
-    <div class="card labs-card front">
-      <div class="frame">
-        <div class="art"></div>
-        <div class="labs-divider" aria-hidden="true"><span>?</span></div>
-        <div class="labs-copy"><div class="labs-meta"><span class="category"></span><img class="labs-symbol" src="img/museu-symbol.png" alt="Museu da Computação" width="1321" height="864"></div><h3 class="name"></h3><p class="clue"></p></div>
-        <div class="card-foot"><span>Em que ano?</span><span class="unknown" aria-label="Ano desconhecido">????</span></div>
-        <small class="image-credit" hidden></small>
-        <span class="difficulty" hidden><span class="level"></span><span class="pips" aria-hidden="true"></span></span>
-      </div>
-    </div>
-  </template>
-  <template id="labs-back">
-    <div class="card labs-card back">
-      <div class="frame">
-        <div class="card-head"><span class="labs-wordmark">Timeline</span><img class="labs-symbol" src="img/museu-symbol.png" alt="Museu da Computação" width="1321" height="864"></div>
-        <div class="answer">
-          <div class="labs-date"><p class="year"></p></div>
-          <small class="draft" hidden>Ano a confirmar</small>
-        </div>
-        <div class="labs-back-foot"><span>Museu da Computação</span><span>FACOM · UFU</span></div>
-      </div>
-    </div>
   </template>
 </body>
 </html>

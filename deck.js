@@ -178,8 +178,8 @@ function setText(card, selector, value) {
   card.querySelector(selector).textContent = value;
 }
 
-function frontFace(entry, template = 'front') {
-  const card = face(template);
+function frontFace(entry) {
+  const card = face('front');
   setText(card, '.name', entry.name);
   setText(card, '.clue', entry.clue);
   setText(card, '.category', entry.category);
@@ -198,48 +198,11 @@ function frontFace(entry, template = 'front') {
   return card;
 }
 
-function backFace(entry, start, end) {
+function backFace(entry) {
   const card = face('back');
   setText(card, '.year', entry.year);
-  setText(card, '.name', entry.name);
-  setText(card, '.event', entry.event);
-  setText(card, '.start', start);
-  setText(card, '.end', end);
-  card.querySelector('.track i').style.left = `${start === end ? 50 : 100 * (entry.year - start) / (end - start)}%`;
   card.querySelector('.draft').hidden = entry.verified;
   return card;
-}
-
-function labsCard(entry, start, end) {
-  const preview = document.getElementById('labs-preview');
-  const front = frontFace(entry, 'labs-front');
-  const back = face('labs-back');
-  setText(back, '.year', entry.year);
-  back.querySelector('.draft').hidden = entry.verified;
-  const originalFront = frontFace(entry);
-  const originalBack = backFace(entry, start, end);
-  preview.replaceChildren();
-  for (const [label, proposal, original] of [
-    ['Frente · a pergunta', front, originalFront],
-    ['Verso · a resposta', back, originalBack],
-  ]) {
-    const figure = document.createElement('figure');
-    const caption = document.createElement('figcaption');
-    caption.textContent = label;
-    original.hidden = true;
-    figure.append(caption, proposal, original);
-    preview.append(figure);
-  }
-  const compare = document.getElementById('labs-compare');
-  compare.disabled = false;
-  compare.addEventListener('click', () => {
-    const showOriginal = compare.getAttribute('aria-pressed') !== 'true';
-    front.hidden = back.hidden = showOriginal;
-    originalFront.hidden = originalBack.hidden = !showOriginal;
-    compare.setAttribute('aria-pressed', String(showOriginal));
-  });
-  preview.setAttribute('aria-busy', 'false');
-  return [front, originalFront];
 }
 
 function screenCard(entry, front, back) {
@@ -284,21 +247,12 @@ async function loadDeck() {
     fetchJSON('img/cards/credits.json').catch(() => null),
   ]);
   entries.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-  const years = entries.map(({year}) => year);
-  const start = Math.min(...years);
-  const end = Math.max(...years);
   const screen = document.getElementById('deck');
   const print = document.getElementById('print-deck');
   const images = [];
-  // Keep the experiment to one catalog entry; never add it to the print sheets.
-  const sample = entries.find(entry => entry.id === 'alan-turing') || entries[0];
-  if (sample) {
-    const fronts = labsCard(sample, start, end);
-    images.push(applyImage(sample, credits?.[sample.id], fronts));
-  }
   const pairs = entries.map(entry => {
     const front = frontFace(entry);
-    const back = backFace(entry, start, end);
+    const back = backFace(entry);
     const screenFront = front.cloneNode(true);
     screen.append(screenCard(entry, screenFront, back.cloneNode(true)));
     images.push(applyImage(entry, credits?.[entry.id], [screenFront, front]));
@@ -329,7 +283,4 @@ async function loadDeck() {
 loadDeck().catch(() => {
   document.getElementById('status').textContent =
     'Não foi possível carregar as cartas. Abra o baralho pelo servidor local conforme o README.';
-  const status = document.getElementById('labs-status');
-  if (status) status.textContent = 'Não foi possível carregar o experimento. Tente atualizar a página.';
-  document.getElementById('labs-preview').setAttribute('aria-busy', 'false');
 });
