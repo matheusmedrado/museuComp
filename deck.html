@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Baralho Timeline · Museu da Computação FACOM-UFU</title>
+  <link rel="stylesheet" href="deck.css">
+  <script src="deck.js" defer></script>
+</head>
+<body>
+  <header class="site-head">
+    <a href="index.html">Museu da Computação <span>· FACOM-UFU</span></a>
+    <a href="index.html#3">Como se joga ↗</a>
+  </header>
+  <main class="screen">
+    <header class="deck-head">
+      <div>
+        <p class="eyebrow">// o baralho</p>
+        <h1>TIME<span>LINE</span></h1>
+        <p>História da computação, uma carta de cada vez.</p>
+      </div>
+      <div class="print-action">
+        <button id="print" type="button" disabled>Imprimir baralho</button>
+        <p>A4 · frente e verso · virar pela borda longa · escala 100%</p>
+      </div>
+    </header>
+    <p id="status" role="status">Carregando cartas…</p>
+    <ul id="deck" class="deck" aria-label="Cartas Timeline"></ul>
+  </main>
+  <div id="print-deck" aria-hidden="true"></div>
+
+  <template id="front">
+    <div class="card front">
+      <div class="frame">
+        <div class="card-head"><span>Museu da Computação</span><span>Timeline</span></div>
+        <div class="art"><span class="category"></span></div>
+        <h2 class="name"></h2>
+        <p class="clue"></p>
+        <div class="card-foot">
+          <span class="unknown">ANO <b>????</b></span>
+          <span class="difficulty"><span class="level"></span><span class="pips" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </template>
+  <template id="back">
+    <div class="card back">
+      <div class="frame">
+        <div class="card-head"><span>Museu da Computação</span><span>Timeline</span></div>
+        <div class="answer">
+          <span class="year-label">// ano</span>
+          <p class="year"></p>
+          <h2 class="name"></h2>
+          <p class="event"></p>
+          <div class="ruler" aria-hidden="true"><span class="start"></span><span class="track"><i></i></span><span class="end"></span></div>
+          <small class="draft" hidden>Ano a confirmar</small>
+        </div>
+        <span class="end-mark" aria-hidden="true">■ ■ ■</span>
+      </div>
+    </div>
+  </template>
+</body>
+</html>
