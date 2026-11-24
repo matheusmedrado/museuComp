@@ -10,6 +10,7 @@
 <body>
   <header class="site-head">
     <a href="index.html">Museu da Computação <span>· FACOM-UFU</span></a>
+    <a href="#labs">Labs <span>· novo visual</span></a>
     <a href="#creditos">Créditos das imagens</a>
     <a href="index.html#3">Como se joga ↗</a>
   </header>
@@ -25,8 +26,26 @@
         <p>A4 · frente e verso · virar pela borda longa · escala 100%</p>
       </div>
     </header>
+    <section id="labs" class="labs" aria-labelledby="labs-title">
+      <header class="labs-head">
+        <div>
+          <p class="eyebrow">Labs / 01</p>
+          <h2 id="labs-title">Um novo olhar para o tempo.</h2>
+          <p>Uma carta, duas faces. Um estudo visual para o Timeline — o baralho abaixo continua igual.</p>
+        </div>
+        <span class="labs-badge">Em experimentação</span>
+      </header>
+      <div class="labs-preview" id="labs-preview" aria-busy="true">
+        <p id="labs-status" role="status">Preparando a carta experimental…</p>
+      </div>
+      <footer class="labs-foot">
+        <p>Mais espaço para a imagem. A mesma textura.</p>
+        <button id="labs-compare" type="button" aria-pressed="false" aria-controls="labs-preview" disabled>Comparar com a versão atual</button>
+      </footer>
+    </section>
+    <h2 class="deck-title" id="deck-title">O baralho <span>· versão atual</span></h2>
     <p id="status" role="status">Carregando cartas…</p>
-    <ul id="deck" class="deck" aria-label="Cartas Timeline"></ul>
+    <ul id="deck" class="deck" aria-labelledby="deck-title"></ul>
   </main>
   <div id="print-deck" aria-hidden="true"></div>
   <section id="creditos" class="credits" aria-labelledby="credits-title">
@@ -73,6 +92,32 @@
       <a class="credit-source"></a>
       <p class="credit-note" hidden></p>
     </li>
+  </template>
+  <template id="labs-front">
+    <div class="card labs-card front">
+      <div class="frame">
+        <div class="art"><span class="labs-art-head">Timeline <span>Museu da Computação</span></span></div>
+        <div class="labs-divider" aria-hidden="true"><span>?</span></div>
+        <div class="labs-copy"><div class="labs-meta"><span class="category"></span><span>FACOM · UFU</span></div><h3 class="name"></h3><p class="clue"></p></div>
+        <div class="card-foot"><span>Em que ano?</span><span class="unknown" aria-label="Ano desconhecido">????</span></div>
+        <small class="image-credit" hidden></small>
+        <span class="difficulty" hidden><span class="level"></span><span class="pips" aria-hidden="true"></span></span>
+      </div>
+    </div>
+  </template>
+  <template id="labs-back">
+    <div class="card labs-card back">
+      <div class="frame">
+        <div class="card-head"><span class="labs-wordmark">Timeline<span aria-hidden="true">▪</span></span><span>Museu da<br>Computação</span></div>
+        <div class="answer">
+          <div class="labs-date"><span class="year-label">O ano é</span><p class="year"></p></div>
+          <div class="labs-copy"><h3 class="name"></h3><p class="event"></p></div>
+          <small class="draft" hidden>Ano a confirmar</small>
+          <div class="ruler" aria-hidden="true"><span class="start"></span><span class="track"><i></i></span><span class="end"></span></div>
+        </div>
+        <div class="labs-back-foot"><span>História da computação</span><span>FACOM · UFU</span></div>
+      </div>
+    </div>
   </template>
 </body>
 </html>

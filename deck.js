@@ -131,10 +131,10 @@ async function applyImage(entry, credit, fronts) {
   if (!entry.image || !credit) return;
   try {
     const canvas = await ditheredArtwork(entry.image);
-    const copy = canvas.cloneNode();
-    copy.getContext('2d').drawImage(canvas, 0, 0);
     for (const [i, front] of fronts.entries()) {
-      front.querySelector('.art svg').replaceWith(i === 0 ? canvas : copy);
+      const art = i === 0 ? canvas : canvas.cloneNode();
+      if (i !== 0) art.getContext('2d').drawImage(canvas, 0, 0);
+      front.querySelector('.art svg').replaceWith(art);
       const label = front.querySelector('.image-credit');
       label.textContent = `${credit.author} · ${licenseName(credit)}`;
       label.hidden = false;
@@ -178,8 +178,8 @@ function setText(card, selector, value) {
   card.querySelector(selector).textContent = value;
 }
 
-function frontFace(entry) {
-  const card = face('front');
+function frontFace(entry, template = 'front') {
+  const card = face(template);
   setText(card, '.name', entry.name);
   setText(card, '.clue', entry.clue);
   setText(card, '.category', entry.category);
@@ -198,8 +198,8 @@ function frontFace(entry) {
   return card;
 }
 
-function backFace(entry, start, end) {
-  const card = face('back');
+function backFace(entry, start, end, template = 'back') {
+  const card = face(template);
   setText(card, '.year', entry.year);
   setText(card, '.name', entry.name);
   setText(card, '.event', entry.event);
@@ -208,6 +208,36 @@ function backFace(entry, start, end) {
   card.querySelector('.track i').style.left = `${start === end ? 50 : 100 * (entry.year - start) / (end - start)}%`;
   card.querySelector('.draft').hidden = entry.verified;
   return card;
+}
+
+function labsCard(entry, start, end) {
+  const preview = document.getElementById('labs-preview');
+  const front = frontFace(entry, 'labs-front');
+  const back = backFace(entry, start, end, 'labs-back');
+  const originalFront = frontFace(entry);
+  const originalBack = backFace(entry, start, end);
+  preview.replaceChildren();
+  for (const [label, proposal, original] of [
+    ['Frente · a pergunta', front, originalFront],
+    ['Verso · a resposta', back, originalBack],
+  ]) {
+    const figure = document.createElement('figure');
+    const caption = document.createElement('figcaption');
+    caption.textContent = label;
+    original.hidden = true;
+    figure.append(caption, proposal, original);
+    preview.append(figure);
+  }
+  const compare = document.getElementById('labs-compare');
+  compare.disabled = false;
+  compare.addEventListener('click', () => {
+    const showOriginal = compare.getAttribute('aria-pressed') !== 'true';
+    front.hidden = back.hidden = showOriginal;
+    originalFront.hidden = originalBack.hidden = !showOriginal;
+    compare.setAttribute('aria-pressed', String(showOriginal));
+  });
+  preview.setAttribute('aria-busy', 'false');
+  return [front, originalFront];
 }
 
 function screenCard(entry, front, back) {
@@ -258,6 +288,12 @@ async function loadDeck() {
   const screen = document.getElementById('deck');
   const print = document.getElementById('print-deck');
   const images = [];
+  // Keep the experiment to one catalog entry; never add it to the print sheets.
+  const sample = entries.find(entry => entry.id === 'alan-turing') || entries[0];
+  if (sample) {
+    const fronts = labsCard(sample, start, end);
+    images.push(applyImage(sample, credits?.[sample.id], fronts));
+  }
   const pairs = entries.map(entry => {
     const front = frontFace(entry);
     const back = backFace(entry, start, end);
@@ -291,4 +327,7 @@ async function loadDeck() {
 loadDeck().catch(() => {
   document.getElementById('status').textContent =
     'Não foi possível carregar as cartas. Abra o baralho pelo servidor local conforme o README.';
+  const status = document.getElementById('labs-status');
+  if (status) status.textContent = 'Não foi possível carregar o experimento. Tente atualizar a página.';
+  document.getElementById('labs-preview').setAttribute('aria-busy', 'false');
 });

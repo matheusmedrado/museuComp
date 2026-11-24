@@ -15,6 +15,15 @@ cada página de frentes é seguida pela página de versos com as colunas espelha
 Corte nos limites das cartas de 63 × 88 mm. A última página reúne os créditos;
 mantenha-a junto ao baralho impresso.
 
+## Labs
+
+Em [Labs](deck.html#labs), a carta de Alan Turing mostra um estudo de frente e verso
+mais limpo, com a mesma imagem ditherizada. Use **Comparar com a versão atual** para
+alternar os dois visuais. O experimento usa os dados de `cards.json` e moldes próprios
+em `deck.html`, com estilos isolados em `.labs-card` no `deck.css`; não altera as
+19 cartas do baralho nem sua impressão. Para experimentar outra carta, troque o
+identificador escolhido em `loadDeck()` no `deck.js`.
+
 ## Conteúdo
 
 [cards.json](cards.json) contém as 19 cartas da exportação revisada de Matheus. Cada par
