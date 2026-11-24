@@ -10,6 +10,7 @@
 <body>
   <header class="site-head">
     <a href="index.html">Museu da Computação <span>· FACOM-UFU</span></a>
+    <a href="#creditos">Créditos das imagens</a>
     <a href="index.html#3">Como se joga ↗</a>
   </header>
   <main class="screen">
@@ -28,6 +29,12 @@
     <ul id="deck" class="deck" aria-label="Cartas Timeline"></ul>
   </main>
   <div id="print-deck" aria-hidden="true"></div>
+  <section id="creditos" class="credits" aria-labelledby="credits-title">
+    <h2 id="credits-title">Créditos das imagens</h2>
+    <p>As imagens foram redimensionadas, reenquadradas e tratadas com dithering em dois tons. As versões derivadas de imagens CC BY-SA mantêm a licença indicada.</p>
+    <p id="credits-status" role="status" hidden></p>
+    <ul id="image-credits"></ul>
+  </section>
 
   <template id="front">
     <div class="card front">
@@ -40,6 +47,7 @@
           <span class="unknown">ANO <b>????</b></span>
           <span class="difficulty"><span class="level"></span><span class="pips" aria-hidden="true"></span></span>
         </div>
+        <small class="image-credit" hidden></small>
       </div>
     </div>
   </template>
@@ -58,6 +66,13 @@
         <span class="end-mark" aria-hidden="true">■ ■ ■</span>
       </div>
     </div>
+  </template>
+  <template id="image-credit">
+    <li>
+      <strong class="credit-card"></strong> · <span class="credit-author"></span> · <a class="credit-license"></a>
+      <a class="credit-source"></a>
+      <p class="credit-note" hidden></p>
+    </li>
   </template>
 </body>
 </html>

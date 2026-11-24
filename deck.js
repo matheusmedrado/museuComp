@@ -1,5 +1,12 @@
 const svgNS = 'http://www.w3.org/2000/svg';
 const levels = { 'Fácil': 1, 'Média': 2, 'Difícil': 3 };
+const dither = {
+  palette: ['#02474f', '#dbfaff'],
+  size: [444, 354],
+  pixelSize: 2,
+  threshold: .5,
+  bayer: [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]],
+};
 const glyphs = {
   'alan-turing': 'M25 39h110v25H25z M47 39v25m22-25v25m22-25v25m22-25v25 M73 28h14l-7 8z M95 49h14m-59 0h14m33 6h10',
   'john-von-neumann': 'M61 24h38v16H61z M80 40v11m-35 0h70m-70 0v9m35-9v9m35-9v9 M31 60h28v18H31z M66 60h28v18H66z M101 60h28v18h-28z',
@@ -53,6 +60,88 @@ function artwork(id) {
     svgElement('path', { d: texture, fill: '#05536a', opacity: .35 }),
   );
   return svg;
+}
+
+async function ditheredArtwork(path) {
+  const image = new Image();
+  image.src = path;
+  await image.decode();
+
+  const { palette, size, pixelSize, threshold, bayer } = dither;
+  const canvas = document.createElement('canvas');
+  const [width, height] = size.map(dimension => Math.max(1, Math.round(dimension / pixelSize)));
+  canvas.width = width;
+  canvas.height = height;
+  canvas.setAttribute('aria-hidden', 'true');
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, width, height);
+  const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+  const imageWidth = image.naturalWidth * scale;
+  const imageHeight = image.naturalHeight * scale;
+  const yAlign = image.naturalHeight > image.naturalWidth ? .2 : .5;
+  ctx.drawImage(image, (width - imageWidth) / 2, (height - imageHeight) * yAlign, imageWidth, imageHeight);
+
+  const pixels = ctx.getImageData(0, 0, width, height);
+  const colors = palette.map(hex => hex.slice(1).match(/../g).map(channel => parseInt(channel, 16)));
+  const order = bayer.length;
+  for (let y = 0; y < height; y++) {
+    for (let x = 0; x < width; x++) {
+      const i = 4 * (y * width + x);
+      const luminance = (.2126 * pixels.data[i] + .7152 * pixels.data[i + 1] + .0722 * pixels.data[i + 2]) / 255;
+      const cutoff = (bayer[y % order][x % order] + .5) / (order ** 2) + threshold - .5;
+      pixels.data.set(colors[Number(luminance >= cutoff)], i);
+    }
+  }
+  ctx.putImageData(pixels, 0, 0);
+  return canvas;
+}
+
+function licenseName(credit) {
+  return credit.license === 'Public domain' ? 'Domínio público' : credit.license;
+}
+
+async function applyImage(entry, credit, fronts) {
+  if (!entry.image || !credit) return;
+  try {
+    const canvas = await ditheredArtwork(entry.image);
+    const copy = canvas.cloneNode();
+    copy.getContext('2d').drawImage(canvas, 0, 0);
+    for (const [i, front] of fronts.entries()) {
+      front.querySelector('.art svg').replaceWith(i === 0 ? canvas : copy);
+      const label = front.querySelector('.image-credit');
+      label.textContent = `${credit.author} · ${licenseName(credit)}`;
+      label.hidden = false;
+    }
+  } catch {
+    // Keep the SVG if the image cannot be loaded or processed.
+  }
+}
+
+function showCredits(entries, credits) {
+  const list = document.getElementById('image-credits');
+  for (const { id, name } of entries) {
+    const credit = credits[id];
+    if (!credit) continue;
+    const item = document.getElementById('image-credit').content.firstElementChild.cloneNode(true);
+    setText(item, '.credit-card', name);
+    setText(item, '.credit-author', credit.author);
+    setText(item, '.credit-license', licenseName(credit));
+    setText(item, '.credit-source', credit.title);
+    item.querySelector('.credit-license').href = credit.license_url;
+    item.querySelector('.credit-source').href = credit.source_url;
+    if (credit.note) {
+      setText(item, '.credit-note', credit.note);
+      item.querySelector('.credit-note').hidden = false;
+    }
+    list.append(item);
+  }
+}
+
+async function fetchJSON(path) {
+  const response = await fetch(path);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  return response.json();
 }
 
 function face(side) {
@@ -132,19 +221,23 @@ function sheet(cards, side) {
 }
 
 async function loadDeck() {
-  const response = await fetch('cards.json');
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const entries = await response.json();
+  const [entries, credits] = await Promise.all([
+    fetchJSON('cards.json'),
+    fetchJSON('img/cards/credits.json').catch(() => null),
+  ]);
   entries.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
   const years = entries.map(({year}) => year);
   const start = Math.min(...years);
   const end = Math.max(...years);
   const screen = document.getElementById('deck');
   const print = document.getElementById('print-deck');
+  const images = [];
   const pairs = entries.map(entry => {
     const front = frontFace(entry);
     const back = backFace(entry, start, end);
-    screen.append(screenCard(entry, front.cloneNode(true), back.cloneNode(true)));
+    const screenFront = front.cloneNode(true);
+    screen.append(screenCard(entry, screenFront, back.cloneNode(true)));
+    images.push(applyImage(entry, credits?.[entry.id], [screenFront, front]));
     return { front, back };
   });
 
@@ -156,6 +249,14 @@ async function loadDeck() {
   const drafts = entries.filter(entry => !entry.verified).length;
   const note = drafts ? ` · ${drafts} com ano a confirmar` : '';
   document.getElementById('status').textContent = `${entries.length} cartas${note}`;
+  if (credits) {
+    showCredits(entries, credits);
+  } else {
+    const status = document.getElementById('credits-status');
+    status.textContent = 'Não foi possível carregar os créditos. As cartas mostram as ilustrações de reserva.';
+    status.hidden = false;
+  }
+  await Promise.all(images);
   const button = document.getElementById('print');
   button.disabled = false;
   button.addEventListener('click', () => window.print());

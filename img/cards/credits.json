@@ -1,0 +1,155 @@
+{
+  "alan-turing": {
+    "file": "alan-turing.jpg",
+    "title": "Alan Turing Aged 16.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg",
+    "author": "Possibly Arthur Reginald Chaffin (1893-1954)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-old-auto-expired"
+  },
+  "john-von-neumann": {
+    "file": "john-von-neumann.png",
+    "title": "John R. Vonneumann Los Alamos ID.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:John_R._Vonneumann_Los_Alamos_ID.png",
+    "author": "Federal Government of the United States",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov"
+  },
+  "charles-babbage": {
+    "file": "charles-babbage.jpg",
+    "title": "Charles Babbage - 1860.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Charles_Babbage_-_1860.jpg",
+    "author": "Autor não identificado",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-old"
+  },
+  "margaret-hamilton": {
+    "file": "margaret-hamilton.jpg",
+    "title": "Margaret Hamilton - restoration.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg",
+    "author": "Draper Laboratory; restauração de Adam Cuerden",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-US-no_notice"
+  },
+  "grace-hopper": {
+    "file": "grace-hopper.jpg",
+    "title": "Grace Hopper.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Grace_Hopper.jpg",
+    "author": "James S. Davis",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Navy"
+  },
+  "tim-berners-lee": {
+    "file": "tim-berners-lee.jpg",
+    "title": "Tim Berners-Lee 2023-corp.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tim_Berners-Lee_2023-corp.jpg",
+    "author": "Dr. Frank Gaeth",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "dorothy-vaughan": {
+    "file": "dorothy-vaughan.jpg",
+    "title": "Dorothy Vaughan 2.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Dorothy_Vaughan_2.jpg",
+    "author": "NASA on The Commons",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NASA"
+  },
+  "steve-jobs": {
+    "file": "steve-jobs.jpg",
+    "title": "Steve Jobs Headshot 2010-CROP.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Steve_Jobs_Headshot_2010-CROP.jpg",
+    "author": "Matthew Yohe",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "bill-gates": {
+    "file": "bill-gates.jpg",
+    "title": "Bill Gates 2017 (cropped).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bill_Gates_2017_(cropped).jpg",
+    "author": "Kuhlmann / MSC",
+    "license": "CC BY 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/de/deed.en"
+  },
+  "ada-lovelace": {
+    "file": "ada-lovelace.jpg",
+    "title": "Ada Lovelace portrait.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ada_Lovelace_portrait.jpg",
+    "author": "Alfred Edward Chalon",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-Art"
+  },
+  "an-wang": {
+    "file": "an-wang.jpg",
+    "title": "PDP-5 4k by 12 bit core.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:PDP-5_4k_by_12_bit_core.jpg",
+    "author": "Douglas W. Jones",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "note": "Módulo de memória de núcleo magnético do PDP-5, usado para ilustrar a tecnologia; não é um retrato nem um artefato original de An Wang."
+  },
+  "hedy-lamarr": {
+    "file": "hedy-lamarr.jpg",
+    "title": "Hedy Lamarr 1944.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hedy_Lamarr_1944.jpg",
+    "author": "Dell Publishing",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-US-not_renewed"
+  },
+  "claude-shannon": {
+    "file": "claude-shannon.jpg",
+    "title": "Claude Shannon 1958 MIT portrait cropped.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Claude_Shannon_1958_MIT_portrait_cropped.jpg",
+    "author": "MIT Photo Service, digitized by the MIT Museum",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-not-renewed"
+  },
+  "hollerith": {
+    "file": "hollerith.jpg",
+    "title": "Hollerith census machine at CHM by Tomwsulcer.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hollerith_census_machine_at_CHM_by_Tomwsulcer.jpg",
+    "author": "Tomwsulcer",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "eniac": {
+    "file": "eniac.jpg",
+    "title": "Glen Beck and Betty Snyder program the ENIAC in building 328 at the Ballistic Research Laboratory.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Glen_Beck_and_Betty_Snyder_program_the_ENIAC_in_building_328_at_the_Ballistic_Research_Laboratory.jpg",
+    "author": "U.S. Army (fotógrafo não identificado)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army"
+  },
+  "transistor": {
+    "file": "transistor.jpg",
+    "title": "Replica-of-first-transistor.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Replica-of-first-transistor.jpg",
+    "author": "Funcionário do governo federal dos EUA (não identificado)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-POTUS"
+  },
+  "circuito-integrado": {
+    "file": "circuito-integrado.png",
+    "title": "Replica IC.png",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Replica_IC.png",
+    "author": "Florian Schäffer",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "mouse": {
+    "file": "mouse.jpg",
+    "title": "SRI Computer Mouse.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:SRI_Computer_Mouse.jpg",
+    "author": "SRI International",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "ibm-system-360": {
+    "file": "ibm-system-360.jpg",
+    "title": "360-91-panel.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:360-91-panel.jpg",
+    "author": "NASA (fotógrafo não identificado)",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NASA"
+  }
+}
