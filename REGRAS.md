@@ -6,7 +6,8 @@ Monte uma linha do tempo da computação sem olhar os anos. Se uma jogada parece
 
 - Separe o baralho e cerca de 15 fichas de Bit (tampinhas ou moedas servem).
 - Embaralhe e coloque uma carta no centro, com o ano à mostra: é o início da linha do tempo.
-- Distribua **5 cartas por jogador** se forem 2, **4** se forem 3, ou **3** se forem 4. Com mais gente, joguem em duplas: cada dupla conta como um jogador e compartilha a mão e os Bits.
+- Com mais de 4 pessoas na mesa, formem **2 a 4 equipes de 2 ou 3 pessoas**. Cada equipe joga como um jogador, com uma só mão e um saldo de Bits compartilhado.
+- Distribua **5 cartas por mão** se forem 2 jogadores ou equipes, **4** se forem 3, ou **3** se forem 4.
 - Deixem as cartas da mão na mesa, com a frente para cima e o ano escondido. Cada jogador começa com **1 Bit**. As cartas restantes formam o monte de compra, também com os anos escondidos.
 - Escolham quem começa e sigam em sentido horário.
 
@@ -36,7 +37,7 @@ Use as opções disponíveis no seu modo. Escolha Trocar, Criptografar ou Aposta
 
 ## Escolha o modo
 
-- **Explorador:** para o ensino fundamental (6+ anos), com monitor do museu. Dá para jogar em duplas. É obrigatório ler a dica em voz alta. Use só **Duvido** (qualquer outro jogador, o primeiro a falar), **Trocar** e **Ano cravado** por década.
+- **Explorador:** para o ensino fundamental (6+ anos), com monitor do museu. É obrigatório ler a dica em voz alta. Use só **Duvido** (qualquer outro jogador, o primeiro a falar), **Trocar** e **Ano cravado** por década.
 - **Hacker:** para estudantes de computação. Use todas as regras. Só o próximo jogador pode dizer **Duvido**, e **Ano cravado** exige o ano exato.
 
 ## Fim de jogo
