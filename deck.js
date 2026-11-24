@@ -1,10 +1,11 @@
 const svgNS = 'http://www.w3.org/2000/svg';
 const levels = { 'Fácil': 1, 'Média': 2, 'Difícil': 3 };
 const dither = {
-  palette: ['#02474f', '#dbfaff'],
+  palette: ['#02474f', '#39747d', '#6fa1a7', '#a5ced3', '#dbfaff'],
   size: [444, 354],
-  pixelSize: 2,
-  threshold: .5,
+  pixelSize: 1,
+  strength: .55,
+  levels: { shadows: .02, highlights: .98, minimumRange: 64, gamma: .9 },
   bayer: [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]],
 };
 const glyphs = {
@@ -62,12 +63,34 @@ function artwork(id) {
   return svg;
 }
 
+function luminanceLevels(pixels, { shadows, highlights, minimumRange }) {
+  const luminance = new Uint8Array(pixels.length / 4);
+  const histogram = new Uint32Array(256);
+  for (let i = 0; i < luminance.length; i++) {
+    const p = i * 4;
+    luminance[i] = Math.round(.2126 * pixels[p] + .7152 * pixels[p + 1] + .0722 * pixels[p + 2]);
+    histogram[luminance[i]]++;
+  }
+  function percentile(fraction) {
+    const rank = Math.floor((luminance.length - 1) * fraction);
+    let count = 0;
+    for (let tone = 0; tone < histogram.length; tone++) {
+      count += histogram[tone];
+      if (count > rank) return tone;
+    }
+    return 255;
+  }
+  const low = percentile(shadows);
+  const high = percentile(highlights);
+  return high - low >= minimumRange ? { luminance, low, high } : { luminance, low: 0, high: 255 };
+}
+
 async function ditheredArtwork(path) {
   const image = new Image();
   image.src = path;
   await image.decode();
 
-  const { palette, size, pixelSize, threshold, bayer } = dither;
+  const { palette, size, pixelSize, strength, levels, bayer } = dither;
   const canvas = document.createElement('canvas');
   const [width, height] = size.map(dimension => Math.max(1, Math.round(dimension / pixelSize)));
   canvas.width = width;
@@ -83,14 +106,17 @@ async function ditheredArtwork(path) {
   ctx.drawImage(image, (width - imageWidth) / 2, (height - imageHeight) * yAlign, imageWidth, imageHeight);
 
   const pixels = ctx.getImageData(0, 0, width, height);
+  const { luminance, low, high } = luminanceLevels(pixels.data, levels);
   const colors = palette.map(hex => hex.slice(1).match(/../g).map(channel => parseInt(channel, 16)));
   const order = bayer.length;
+  const last = colors.length - 1;
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      const i = 4 * (y * width + x);
-      const luminance = (.2126 * pixels.data[i] + .7152 * pixels.data[i + 1] + .0722 * pixels.data[i + 2]) / 255;
-      const cutoff = (bayer[y % order][x % order] + .5) / (order ** 2) + threshold - .5;
-      pixels.data.set(colors[Number(luminance >= cutoff)], i);
+      const i = y * width + x;
+      const normalized = Math.min(1, Math.max(0, (luminance[i] - low) / (high - low)));
+      const offset = strength * (.5 - (bayer[y % order][x % order] + .5) / (order ** 2));
+      const tone = Math.round(normalized ** levels.gamma * last + offset);
+      pixels.data.set(colors[tone], i * 4);
     }
   }
   ctx.putImageData(pixels, 0, 0);
