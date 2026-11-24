@@ -1,10 +1,10 @@
 const svgNS = 'http://www.w3.org/2000/svg';
 const levels = { 'Fácil': 1, 'Média': 2, 'Difícil': 3 };
 const dither = {
-  palette: ['#02474f', '#39747d', '#6fa1a7', '#a5ced3', '#dbfaff'],
+  palette: ['#02474f', '#6fa1a7', '#dbfaff'],
   size: [444, 354],
-  pixelSize: 1,
-  strength: .55,
+  pixelSize: 1.6,
+  strength: 1,
   levels: { shadows: .02, highlights: .98, minimumRange: 64, gamma: .9 },
   bayer: [[0, 8, 2, 10], [12, 4, 14, 6], [3, 11, 1, 9], [15, 7, 13, 5]],
 };

@@ -25,7 +25,7 @@ dificuldade, por isso os níveis ficam em branco.
 
 O mesmo catálogo alimenta as versões de tela e de impressão. O campo `image` de
 cada carta aponta para uma imagem do Wikimedia Commons. O baralho ajusta o contraste
-e aplica dithering em cinco tons no navegador; se uma imagem não carregar, a carta
+e aplica dithering em três tons no navegador; se uma imagem não carregar, a carta
 usa sua ilustração SVG. A lista de créditos em [deck.html](deck.html#creditos) vem de
 [img/cards/credits.json](img/cards/credits.json).
 
