@@ -105,7 +105,9 @@ function screenCard(entry, front, back) {
     button.setAttribute('aria-label', `${button.textContent}: ${entry.name}`);
   }
   show(false);
-  button.addEventListener('click', () => show(back.hidden));
+  for (const control of [front, back, button]) {
+    control.addEventListener('click', () => show(back.hidden));
+  }
   item.append(front, back, button);
   return item;
 }

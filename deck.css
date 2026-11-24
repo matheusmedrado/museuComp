@@ -27,7 +27,7 @@ h1 span { color: var(--cyan); }
 #status { margin: .85rem 0 1.15rem; }
 .deck { padding: 0 0 3rem; margin: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1.45rem; }
 .deck li { min-width: 0; }
-.deck .card { box-shadow: 0 .8rem 1.6rem #08092160; }
+.deck .card { box-shadow: 0 .8rem 1.6rem #08092160; cursor: pointer; }
 .flip { display: block; width: 100%; margin-top: .5rem; padding: .45rem; border: 1px solid #ffffff50; border-radius: .4rem; color: var(--cyan); background: transparent; }
 .flip:hover { background: #ffffff14; }
 
