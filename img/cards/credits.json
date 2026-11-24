@@ -462,5 +462,32 @@
     "author": "okqubit.net",
     "license": "Public domain",
     "license_url": "https://commons.wikimedia.org/wiki/Template:PD-author"
+  },
+  "elixir": {
+    "file": "elixir.jpg",
+    "title": "José Valim - elixirconf-43 (14795675701).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jos%C3%A9_Valim_-_elixirconf-43_(14795675701).jpg",
+    "author": "Augie De Blieck",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "note": "Retrato de José Valim na ElixirConf de 2014."
+  },
+  "ginga": {
+    "file": "ginga.jpg",
+    "title": "Diagram SBTVD in layers.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Diagram_SBTVD_in_layers.jpg",
+    "author": "Sbtvdisdbt",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+    "note": "Diagrama da TV digital brasileira com a camada do Ginga."
+  },
+  "nubank": {
+    "file": "nubank.jpg",
+    "title": "Nubank logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Nubank_logo.svg",
+    "author": "Nubank",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/Template:PD-textlogo",
+    "note": "Marca do Nubank; não é um registro do lançamento."
   }
 }
