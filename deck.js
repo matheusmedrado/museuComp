@@ -1,24 +1,25 @@
 const svgNS = 'http://www.w3.org/2000/svg';
 const levels = { 'Fácil': 1, 'Média': 2, 'Difícil': 3 };
 const glyphs = {
-  pascalina: 'M31 29h98v41H31z M39 35h82v15H39z M48 59h8m10 0h8m10 0h8m10 0h8',
-  'ada-lovelace': 'M42 20h55l21 20v38H42z M97 20v22h21 M53 35h28m-28 12h35m-35 12h19m8 0h27m-54 10h54',
   'alan-turing': 'M25 39h110v25H25z M47 39v25m22-25v25m22-25v25m22-25v25 M73 28h14l-7 8z M95 49h14m-59 0h14m33 6h10',
+  'john-von-neumann': 'M61 24h38v16H61z M80 40v11m-35 0h70m-70 0v9m35-9v9m35-9v9 M31 60h28v18H31z M66 60h28v18H66z M101 60h28v18h-28z',
+  'charles-babbage': 'M54 24h52v53H54z M61 29v40m9-40v40m10-40v40m10-40v40m9-40v40 M49 36h62m-62 14h62m-62 14h62',
+  'margaret-hamilton': 'M61 36a11 11 0 1 0 .01 0 M42 78V68c0-8 8-12 19-12s19 4 19 12v10z M90 30h28v10H90z M94 40h32v12H94z M89 52h32v13H89z M94 65h33v13H94z',
+  'grace-hopper': 'M41 28h32v44H41z M49 38h16m-16 8h16m-16 8h16 M80 49h19m-7-7 7 7-7 7 M106 31h19v38h-19z M111 40h9m-9 9h9m-9 9h9',
+  'tim-berners-lee': 'M80 24a26 26 0 1 0 .01 0 M54 50h52m-26-26c-17 12-17 40 0 52m0-52c17 12 17 40 0 52 M34 42h13m67 16h13',
+  'dorothy-vaughan': 'M43 27h74v48H43z M43 37h74 M65 47l-8 8 8 8m30-16 8 8-8 8m-9-19-12 22',
+  'steve-jobs': 'M39 37h82v32H39z M48 45h47v16H48z M103 45h9m-9 8h9m-9 8h9 M55 69v8m50-8v8 M55 52h33',
+  'bill-gates': 'M51 26h58v44H51z M51 36h58 M61 48l-5 6 5 6m13-12 5 6-5 6m14 0h12 M40 76h80',
+  'ada-lovelace': 'M42 20h55l21 20v38H42z M97 20v22h21 M53 35h28m-28 12h35m-35 12h19m8 0h27m-54 10h54',
+  'an-wang': 'M42 31h76v42H42z M60 38v28m20-28v28m20-28v28 M50 43h60m-60 18h60 M60 43a5 5 0 1 0 .01 0 M80 61a5 5 0 1 0 .01 0 M100 43a5 5 0 1 0 .01 0',
+  'hedy-lamarr': 'M34 52h12l7-17 9 34 8-25 7 8h10m6-9 7-16 8 35 7-18h11 M45 77h70',
+  'claude-shannon': 'M38 55h18V39h16v16h16V39h16v16h18 M38 66h84 M52 27a4 4 0 1 0 .01 0 M78 22v8m21-3a4 4 0 1 0 .01 0',
+  hollerith: 'M31 35h98v35H31z M42 44h4m8 0h4m8 0h4m8 0h4m8 0h4m8 0h4m8 0h4 M42 53h4m20 0h4m20 0h4m20 0h4 M54 62h4m20 0h4m20 0h4',
   eniac: 'M28 23h104v52H28z M62 23v52m36-52v52 M37 34h16m-16 12h16m-16 12h16m18-24h18m-18 12h18m-18 12h18m18-24h16m-16 12h16m-16 12h16',
   transistor: 'M80 36a19 19 0 1 0 .01 0 M61 55H38m28-10 49-23m-49 43 49 14m-22-13 10 9-14 1 M65 44v23',
-  zezinho: 'M34 30h92v44H34z M43 39h34v25H43z M86 42h30m-30 10h13m5 0h12m-30 10h30 M48 49h19v5H48z',
+  'circuito-integrado': 'M58 29h44v44H58z M67 38h26v26H67z M46 37h12m-12 10h12m-12 10h12m-12 10h12m44-30h12m-12 10h12m-12 10h12m-12 10h12 M68 18v11m12-11v11m12-11v11m-24 44v11m12-11v11m12-11v11',
   mouse: 'M81 29c-5-17 26-7 24-18 M57 53c0-13 9-24 23-24s23 11 23 24v10c0 12-9 18-23 18s-23-6-23-18z M57 50h46M80 29v21',
-  'margaret-hamilton': 'M61 36a11 11 0 1 0 .01 0 M42 78V68c0-8 8-12 19-12s19 4 19 12v10z M90 30h28v10H90z M94 40h32v12H94z M89 52h32v13H89z M94 65h33v13H94z',
-  'intel-4004': 'M58 29h44v44H58z M67 38h26v26H67z M46 37h12m-12 10h12m-12 10h12m-12 10h12m44-30h12m-12 10h12m-12 10h12m-12 10h12 M68 18v11m12-11v11m12-11v11m-24 44v11m12-11v11m12-11v11',
-  'patinho-feio': 'M29 34h102v39H29z M73 34v39M38 42h27v15H38z M38 65h27m17-20h11m5 0h11m5 0h10m-42 9h11m5 0h11m5 0h10m-42 9h11m5 0h11m5 0h10',
-  lncc: 'M80 23L40 70h80z M80 15a8 8 0 1 0 .01 0 M40 62a8 8 0 1 0 .01 0 M120 62a8 8 0 1 0 .01 0',
-  web: 'M80 24a26 26 0 1 0 .01 0 M54 50h52m-26-26c-17 12-17 40 0 52m0-52c17 12 17 40 0 52 M34 42h13m67 16h13',
-  lua: 'M90 25a25 25 0 1 0 17 32C86 62 77 42 90 25z M111 24v13m-7-7h14 M48 39l-10 8 10 8m68 9 8 7-8 7',
-  'urna-eletronica': 'M36 31h88v42H36z M44 39h33v18H44z M86 40h7m6 0h7m6 0h6m-32 8h7m6 0h7m6 0h6m-32 8h7m6 0h7m6 0h6m-32 9h32',
-  google: 'M34 39h92v23H34z M111 44a5 5 0 1 0 .01 0m3 9 6 5 M44 50h40 M47 69h58',
-  iphone: 'M63 20h34v64H63z M67 28h26v43H67z M76 77h8 M75 24h10',
-  pix: 'M54 52l21-21 5 5 5-5 21 21-21 21-5-5-5 5z M59 48h12l9 9 9-9h12m-42 8h12l9-9 9 9h12',
-  chatgpt: 'M39 32h82v36H77l-17 12V68H39z M53 44h55m-55 7h43m-43 7h36',
+  'ibm-system-360': 'M33 29h94v47H33z M65 29v47m30-47v47 M40 41h18v17H40z M48 44a4 4 0 1 0 .01 0 M72 41h16m-16 9h16m-16 9h16m14-18h18m-18 9h18m-18 9h18',
 };
 
 function svgElement(tag, attributes) {
@@ -67,12 +68,17 @@ function frontFace(entry) {
   setText(card, '.name', entry.name);
   setText(card, '.clue', entry.clue);
   setText(card, '.category', entry.category);
-  setText(card, '.level', entry.difficulty);
   card.querySelector('.art').append(artwork(entry.id));
-  for (let i = 0; i < 3; i++) {
-    const pip = document.createElement('i');
-    if (i < levels[entry.difficulty]) pip.className = 'on';
-    card.querySelector('.pips').append(pip);
+  const level = levels[entry.difficulty];
+  card.querySelector('.difficulty').hidden = !level;
+  if (level) {
+    setText(card, '.level', entry.difficulty);
+    const pips = card.querySelector('.pips');
+    for (let i = 0; i < 3; i++) {
+      const pip = document.createElement('i');
+      if (i < level) pip.className = 'on';
+      pips.append(pip);
+    }
   }
   return card;
 }

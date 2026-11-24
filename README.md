@@ -16,11 +16,11 @@ Corte nos limites das cartas de 63 × 88 mm.
 
 ## Conteúdo
 
-[cards.json](cards.json) contém as 18 cartas citadas ou mostradas nos slides, não a lista
-completa de cartas revisadas. `verified` indica se a combinação de nome e ano aparece na
-apresentação, não uma checagem histórica independente. As datas de **Transistor** e
-**Mouse de computador** são propostas e aparecem marcadas nos versos. As pistas,
-categorias, níveis e ilustrações novas são material de protótipo.
+[cards.json](cards.json) contém as 19 cartas da exportação revisada de Matheus. Cada par
+de PNGs de origem é identificado no catálogo. `verified` indica que o nome, o texto e o
+ano foram conferidos contra essa exportação, não uma checagem histórica independente.
+As categorias foram inferidas pelo tema das cartas; a exportação não atribui
+dificuldade, por isso os níveis ficam em branco. As ilustrações dos PNGs não foram incorporadas.
 
 O mesmo catálogo alimenta as versões de tela e de impressão. Edite os dados em
 `cards.json`, as ilustrações SVG em `deck.js` e a aparência em `deck.css`;
