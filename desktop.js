@@ -123,7 +123,7 @@ addEventListener('resize', () => windows.forEach(window => {
   window.style.top = '';
 }));
 openWindow('inicio', false);
-readHash(!wideScreen.matches);
+readHash(Boolean(location.hash) && !wideScreen.matches);
 
 const clock = document.getElementById('os-clock');
 function updateClock() {
