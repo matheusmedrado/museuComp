@@ -1,5 +1,8 @@
 const printButton = document.getElementById('print-manual');
-printButton.addEventListener('click', () => window.print());
+printButton.addEventListener('click', async () => {
+  await Promise.all([document.fonts.ready, exampleReady]);
+  window.print();
+});
 printButton.hidden = false;
 
 async function showExample() {
@@ -22,6 +25,6 @@ async function showExample() {
   document.getElementById('example').hidden = false;
 }
 
-showExample().catch(() => {
+const exampleReady = showExample().catch(() => {
   document.getElementById('example').hidden = true;
 });

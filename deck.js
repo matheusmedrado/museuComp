@@ -99,7 +99,7 @@ async function loadDeck() {
     status.textContent = 'Não foi possível carregar os créditos. As cartas mostram as ilustrações de reserva.';
     status.hidden = false;
   }
-  await Promise.all(images);
+  await Promise.all([...images, document.fonts.ready]);
   const button = document.getElementById('print');
   button.disabled = false;
   button.textContent = 'Imprimir baralho ↗';

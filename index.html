@@ -2,67 +2,124 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CompLine: um jogo de cartas sobre a história da computação, do Museu da Computação da FACOM-UFU. Conheça as regras e imprima seu baralho.">
-  <meta name="theme-color" content="#111323">
-  <title>CompLine · A história da computação fora de ordem</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CompLine: um jogo de cartas sobre a história da computação, do Museu da Computação da FACOM-UFU. Explore, aprenda e imprima.">
+  <meta name="theme-color" content="#191a20">
+  <title>CompLine · Museu da Computação</title>
   <link rel="icon" href="img/museu-symbol.png">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=array@400&amp;display=swap">
   <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="cards.css">
   <script src="desktop.js" type="module"></script>
   <script src="home.js" type="module"></script>
+  <script src="boot.js" type="module"></script>
 </head>
 <body class="home-page">
+  <section class="boot-screen" id="boot-screen" role="dialog" aria-modal="true" aria-labelledby="boot-title" hidden>
+    <div class="boot-content">
+      <svg class="boot-computer" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 5h40v42H12zM18 11h28v25H18zM8 47h48v11H8zM20 42h7m12 10h7M25 20v3m14-3v3m-14 6h14"/></svg>
+      <h2 id="boot-title">CompLine</h2>
+      <p class="boot-status" id="boot-status" role="status">Iniciando o desktop…</p>
+      <div class="boot-progress" aria-hidden="true"><span></span></div>
+      <button type="button" id="skip-boot">Pular abertura <span aria-hidden="true">↗</span></button>
+    </div>
+  </section>
+  <div id="os-shell">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-    <symbol id="i-cards" viewBox="0 0 48 48"><path d="m10 8 23-3 5 33-23 3zM7 12h25v33H7zM12 18h15M12 23h10M12 36h15m-10-9-3 3 3 3m5-6 3 3-3 3"/></symbol>
-    <symbol id="i-guide" viewBox="0 0 48 48"><path d="M5 8h15l4 4 4-4h15v31H28l-4 4-4-4H5zM24 12v31M10 16h9m-9 6h9m-9 6h9m10-12h9m-9 6h9m-9 6h9"/></symbol>
-    <symbol id="i-print" viewBox="0 0 48 48"><path d="M12 17V4h24v13M12 35H5V17h38v18h-7M12 28h24v16H12zM17 34h14m-14 5h10M34 23h3"/></symbol>
-    <symbol id="i-info" viewBox="0 0 48 48"><path d="M8 5h26l7 7v31H8zM33 5v9h8M24 21v13m-5 0h10M24 16v1"/></symbol>
-    <symbol id="i-home" viewBox="0 0 48 48"><path d="M5 8h38v26H5zM10 13h28v16H10zM18 34v7m12-7v7M12 42h24m-20-24 4 3-4 3m8 1h7"/></symbol>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-home" viewBox="0 0 40 40"><path class="icon-fill" d="M5 4h30v24H5zM13 32h14v4H13z"/><path d="M9 8h22v16H9zM16 28v4m8-4v4M13 14h3m8 0h3m-12 5h10"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 40 40"><path class="icon-fill" d="M8 3h21l5 5v25H8z"/><path d="M29 3v6h5M5 9H3v28h24v-2M14 14h14m-14 5h14m-14 5h8"/><path class="icon-accent" d="M13 10h7v2h-7z"/></symbol>
+    <symbol id="i-guide" viewBox="0 0 40 40"><path class="icon-fill" d="M4 5h13l3 3 3-3h13v28H23l-3 3-3-3H4z"/><path d="M20 8v28M9 12h6m-6 5h6m-6 5h6m10-10h6m-6 5h6m-6 5h6"/></symbol>
+    <symbol id="i-print" viewBox="0 0 40 40"><path class="icon-fill" d="M9 3h22v12H9zM3 15h34v16H3zM9 25h22v12H9z"/><path d="M9 29h22m-17 3h12M28 20h3"/><path class="icon-accent" d="M6 19h3v3H6z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 40 40"><path class="icon-fill" d="M8 3h21l5 5v29H8z"/><path d="M29 3v6h5M20 15v2m-3 5h4v8m-5 0h10"/></symbol>
+    <symbol id="i-credits" viewBox="0 0 40 40"><path class="icon-fill" d="M4 7h32v27H4z"/><path d="M8 11h24v19H8zM8 26l8-8 6 6 4-4 6 6M26 15h2v2h-2z"/></symbol>
   </defs></svg>
   <header class="os-menubar">
-    <a class="brand-link" href="index.html" aria-label="CompLine, início">Comp<span>Line</span></a>
-    <nav aria-label="Menu do desktop"><a href="#como-jogar" data-open="como-jogar">Como jogar</a><a href="deck.html">Baralho</a><a href="#sobre" data-open="sobre">Sobre</a></nav>
-    <div class="os-system"><span class="system-online"><i aria-hidden="true"></i> Museu da Computação</span><time id="os-clock" aria-label="Hora atual">FACOM / UFU</time></div>
+    <div class="museum-brand"><img src="img/museu-logo-white.png" width="5538" height="981" alt="Museu da Computação"></div>
+    <time id="os-clock" aria-label="Hora atual"></time>
   </header>
   <main id="conteudo" class="desktop" aria-label="Desktop CompLine">
-    <div class="wallpaper" aria-hidden="true"><div class="wallpaper-orbit"></div><span class="wallpaper-wordmark">CompLine</span><span class="wallpaper-coordinate mono">18°55′ S &nbsp; 48°15′ O<br>UBERLÂNDIA · BRASIL</span></div>
-    <nav class="desktop-shortcuts" aria-label="Aplicativos">
-      <a class="desktop-shortcut" href="deck.html"><svg aria-hidden="true"><use href="#i-cards"/></svg><span>O baralho</span></a>
-      <a class="desktop-shortcut" href="#como-jogar" data-open="como-jogar"><svg aria-hidden="true"><use href="#i-guide"/></svg><span>Como jogar</span></a>
+    <nav class="desktop-shortcuts" aria-label="Atalhos do desktop">
+      <a class="desktop-shortcut" href="#inicio" data-open="inicio"><svg aria-hidden="true"><use href="#i-home"/></svg><span>CompLine</span></a>
+      <a class="desktop-shortcut" href="deck.html" data-open="baralho"><svg aria-hidden="true"><use href="#i-cards"/></svg><span>Baralho</span></a>
+      <a class="desktop-shortcut" href="manual.html" data-open="manual"><svg aria-hidden="true"><use href="#i-guide"/></svg><span>Manual</span></a>
       <a class="desktop-shortcut" href="#imprimir" data-open="imprimir"><svg aria-hidden="true"><use href="#i-print"/></svg><span>Imprimir</span></a>
-      <a class="desktop-shortcut" href="#sobre" data-open="sobre"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Sobre o projeto</span></a>
+      <a class="desktop-shortcut" href="#sobre" data-open="sobre"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Sobre</span></a>
     </nav>
-    <section class="os-window welcome-window" id="inicio" aria-labelledby="welcome-title" tabindex="-1">
-      <div class="window-titlebar"><span class="window-file"><svg aria-hidden="true"><use href="#i-home"/></svg>bem-vindo.exe</span><span class="window-grip" aria-hidden="true"></span><div class="window-controls" hidden><button type="button" data-window-action="minimize" aria-label="Minimizar boas-vindas" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir boas-vindas" aria-pressed="false" title="Expandir">□</button><button type="button" data-window-action="close" aria-label="Fechar boas-vindas" title="Fechar">×</button></div></div>
+    <section class="os-window welcome-window" id="inicio" aria-labelledby="welcome-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar boas-vindas" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar boas-vindas" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir boas-vindas" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="welcome-file">CompLine</span></div>
       <div class="window-body welcome-body">
-        <div class="welcome-copy"><p class="overline"><span class="live-dot" aria-hidden="true"></span> Museu da Computação · FACOM / UFU</p><p class="welcome-kicker mono">Um jogo de cartas. Muitas conexões.</p><h1 id="welcome-title">A história<br>não vem<br><em>em ordem.</em></h1><p class="hero-description">Do primeiro algoritmo ao Pix. Conecte pessoas, ideias e invenções em uma linha do tempo — sem espiar os anos.</p><div class="actions"><a class="button button-primary" href="deck.html">Explorar o baralho <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-jogar" data-open="como-jogar">Como jogar →</a></div></div>
-        <div class="hero-exhibit"><p class="exhibit-label mono"><span>ACERVO_001</span><span class="tag">Frente + verso</span></p><div id="hero-cards" class="hero-cards" aria-label="Amostra das cartas do baralho"><p class="preview-loading">Pessoas, invenções e muitas descobertas.<br><a href="deck.html">Explore o baralho completo ↗</a></p></div><p class="exhibit-caption mono"><span aria-hidden="true">↳</span> O ano? Só depois do palpite.</p></div>
+        <div class="hero-intro">
+          <p class="welcome-kicker mono">A HISTÓRIA DA COMPUTAÇÃO, EM CARTAS.</p>
+          <h1 class="welcome-wordmark">CompLine</h1>
+          <p class="hero-description">Uma carta fora do tempo.<br><span>Você descobre onde ela entra.</span></p>
+        </div>
+        <figure class="timeline-exhibit" aria-labelledby="timeline-caption">
+          <div id="hero-cards" class="hero-cards" aria-label="Três descobertas encontram seu lugar na linha do tempo"><div class="hero-card"><div class="timeline-placeholder"></div></div><div class="hero-card"><div class="timeline-placeholder"></div></div><div class="hero-card"><div class="timeline-placeholder"></div></div></div>
+          <figcaption id="timeline-caption">Leia a pista. Encontre o lugar. Revele o ano.<button id="replay-hero" type="button" aria-label="Repetir animação da linha do tempo" title="Repetir animação" hidden>↻</button></figcaption>
+        </figure>
+        <div class="hero-actions"><a class="button button-primary" href="deck.html" data-open="baralho">Abrir o baralho <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-jogar" data-open="como-jogar">Como jogar →</a></div>
       </div>
-      <dl class="window-status hero-facts"><div><dt id="card-count">Um</dt><dd>baralho para descobrir</dd></div><div><dt>02</dt><dd>modos de jogar</dd></div><div><dt>2–4</dt><dd>jogadores ou equipes</dd></div><div class="status-spark" aria-hidden="true">✳</div></dl>
     </section>
-    <aside class="desktop-note" aria-label="Uma dica para a mesa"><span class="mono">lembrete.txt <span aria-hidden="true">↗</span></span><p>Não precisa decorar datas.<br>Só de um bom palpite.</p><strong>Na dúvida, mande um “Duvido!”</strong></aside>
-    <section class="os-window content-window" id="como-jogar" aria-labelledby="rules-title" tabindex="-1">
-      <div class="window-titlebar"><span class="window-file"><svg aria-hidden="true"><use href="#i-guide"/></svg>como-jogar.md</span><span class="window-grip" aria-hidden="true"></span><div class="window-controls" hidden><button type="button" data-window-action="minimize" aria-label="Minimizar como jogar" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir como jogar" aria-pressed="false" title="Expandir">□</button><button type="button" data-window-action="close" aria-label="Fechar como jogar" title="Fechar">×</button></div></div>
-      <div class="window-body content-body"><p class="overline">01 / Aprender fazendo conexões</p><h2 id="rules-title">O passado é a sua<br>próxima jogada.</h2><p class="section-description">Um pouco de lógica. Um bom palpite. E coragem para dizer <strong>Duvido!</strong></p>
-        <ol class="steps"><li><span class="step-number">01</span><h3>Leia a pista.</h3><p>Escolha uma carta da sua mão e leia o nome e a dica em voz alta. Nada de olhar o verso.</p></li><li><span class="step-number">02</span><h3>Encontre o lugar.</h3><p>Antes, entre ou depois? Encaixe a carta onde você acha que ela entra na linha do tempo.</p></li><li><span class="step-number">03</span><h3>Vire a história.</h3><p>Dê a chance de alguém duvidar e revele o ano. Se acertou, a carta fica. Se errou, compre outra.</p></li></ol>
-        <p class="rules-footnote"><strong>E quem ganha?</strong> Esvaziou a mão? Os demais jogam mais uma vez. Vence quem terminar com menos cartas; os Bits desempatam.</p>
-        <div class="mode-grid"><article class="mode-panel"><span class="tag">A partir de 6 anos · com mediação</span><h3>Explorador <span aria-hidden="true">↗</span></h3><p>Para descobrir a computação com a turma do museu.</p><ul><li>Qualquer outro jogador pode duvidar.</li><li>Troque cartas usando seus Bits.</li><li>Arrisque a década no Ano cravado.</li></ul><a class="text-link" href="manual.html#modes-title">Regras do modo →</a></article><article class="mode-panel"><span class="tag">Para estudantes de computação</span><h3>Hacker <span aria-hidden="true">&gt;_</span></h3><p>Conhecimento e estratégia à prova, na mesma mesa.</p><ul><li>Só o próximo jogador pode duvidar.</li><li>Criptografe ou faça uma Aposta dupla.</li><li>No Ano cravado, só vale o ano exato.</li></ul><a class="text-link" href="manual.html#bits-title">Explore as jogadas →</a></article></div><a class="button button-primary" href="manual.html">Abrir o manual completo ↗</a>
-      </div><div class="window-status mono">COMPLINE / MANUAL DE JOGO <span>Sem precisar decorar.</span></div>
+    <section class="os-window content-window" id="como-jogar" aria-labelledby="rules-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar como jogar" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar como jogar" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir como jogar" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="rules-file">Como jogar</span></div>
+      <div class="window-body content-body">
+        <p class="overline">COMECE POR AQUI</p><h2>Um bom palpite<br>já é um começo.</h2>
+        <p>CompLine é um jogo de cartas sobre a história da computação. Leia a pista, escolha um lugar na linha do tempo e só então descubra o ano.</p>
+        <ol class="steps"><li><span class="step-number">01</span><h3>Leia a pista.</h3><p>Leia o nome e a dica de uma carta da sua mão, sem olhar o verso.</p></li><li><span class="step-number">02</span><h3>Encontre o lugar.</h3><p>Antes, entre ou depois? Encaixe a carta na linha do tempo.</p></li><li><span class="step-number">03</span><h3>Vire a história.</h3><p>Alguém pode dizer “Duvido!”. Revele o ano para conferir.</p></li></ol>
+        <p>Acertou? A carta fica. Errou? Compre outra. Vence quem terminar com menos cartas; os Bits desempatam.</p>
+        <div class="mode-grid"><article><h3>Explorador</h3><p>A partir de 6 anos, com mediação. Para descobrir a computação com a turma do museu.</p></article><article><h3>Hacker</h3><p>Para estudantes de computação. Conhecimento e estratégia na mesma mesa.</p></article></div>
+        <div class="actions"><a class="button button-primary" href="manual.html" data-open="manual">Abrir o manual</a><a class="text-link" href="deck.html" data-open="baralho">Conhecer as cartas →</a></div>
+      </div>
     </section>
-    <section class="os-window content-window print-window" id="imprimir" aria-labelledby="print-title" tabindex="-1">
-      <div class="window-titlebar"><span class="window-file"><svg aria-hidden="true"><use href="#i-print"/></svg>imprimir.a4</span><span class="window-grip" aria-hidden="true"></span><div class="window-controls" hidden><button type="button" data-window-action="minimize" aria-label="Minimizar impressão" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir impressão" aria-pressed="false" title="Expandir">□</button><button type="button" data-window-action="close" aria-label="Fechar impressão" title="Fechar">×</button></div></div>
-      <div class="window-body content-body print-content"><div class="print-art" aria-hidden="true"><div class="paper-sheet"><span class="brand-link">CompLine</span><div class="paper-grid"><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i><i>?</i></div><small>A4 / FRENTE E VERSO</small></div></div><div><p class="overline">02 / Da tela para a mesa</p><h2 id="print-title">Imprima.<br>Recorte.<br>Faça história.</h2><p class="section-description">Seu próximo jogo já está aqui. O baralho e o manual estão prontos para imprimir em casa ou levar à gráfica.</p><div class="actions"><a class="button button-primary" href="deck.html#imprimir">Preparar impressão ↗</a><a class="text-link" href="manual.html">Abrir manual →</a></div><p class="small-note mono">Papel A4 · cartas de 63 × 88 mm<br>Frente e verso · virar pela borda longa</p></div></div><div class="window-status mono">SAÍDA: UM BOM JOGO <span>Sem materiais especiais.</span></div>
+    <section class="os-window app-window" id="baralho" aria-labelledby="deck-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar o baralho" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar o baralho" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir o baralho" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="deck-file">Baralho</span></div>
+      <nav class="app-toolbar" aria-label="Ferramentas do baralho"><span>Explore as pistas. Vire as cartas.</span><a href="deck.html#creditos" data-open="creditos">Créditos</a><a href="#imprimir" data-open="imprimir">Imprimir…</a></nav>
+      <iframe data-src="deck.html?desktop=1" title="Coleção de cartas do CompLine"></iframe>
+      <noscript><p><a href="deck.html">Abrir o baralho completo</a></p></noscript>
     </section>
-    <section class="os-window content-window about-window" id="sobre" aria-labelledby="about-title" tabindex="-1">
-      <div class="window-titlebar"><span class="window-file"><svg aria-hidden="true"><use href="#i-info"/></svg>sobre.txt</span><span class="window-grip" aria-hidden="true"></span><div class="window-controls" hidden><button type="button" data-window-action="minimize" aria-label="Minimizar sobre" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir sobre" aria-pressed="false" title="Expandir">□</button><button type="button" data-window-action="close" aria-label="Fechar sobre" title="Fechar">×</button></div></div>
-      <div class="window-body content-body"><img class="about-logo" src="img/museu-logo.png" width="5539" height="981" alt="Museu da Computação"><p class="overline">03 / Memória que se compartilha</p><h2 id="about-title">O museu também<br>cabe na sua mesa.</h2><p>CompLine é um jogo educativo do Museu da Computação da FACOM-UFU. Uma forma de descobrir quem e o que construiu o mundo digital, com histórias do Brasil e do mundo.</p><p>O nome junta computação e linha do tempo, com uma piscadela para <em>compiler</em>. A proposta é simples: aprender fazendo conexões.</p><div class="future-note"><span class="tag">Próximo capítulo / em planejamento</span><h3>E jogar no navegador?</h3><p>Está nos planos, mas ainda não está disponível. Por enquanto, explore as cartas e prepare a sua mesa.</p></div><div class="actions"><a class="text-link" href="deck.html#creditos">Créditos das imagens ↗</a><a class="text-link" href="https://github.com/matheusmedrado/museuComp">Código do projeto ↗</a></div></div><div class="window-status mono">FACOM / UFU <span>Histórias que conectam.</span></div>
+    <section class="os-window app-window" id="manual" aria-labelledby="manual-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar o manual" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar o manual" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir o manual" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="manual-file">Manual do jogo</span></div>
+      <nav class="app-toolbar" aria-label="Seções do manual"><a href="manual.html#setup-title" data-open="manual" data-section="setup-title">Preparação</a><a href="manual.html#bits-title" data-open="manual" data-section="bits-title">Bits e jogadas</a><a href="manual.html#modes-title" data-open="manual" data-section="modes-title">Modos</a><button type="button" data-print="manual" disabled>Imprimir…</button></nav>
+      <iframe data-src="manual.html?desktop=1" title="Regras completas do CompLine"></iframe>
+      <noscript><p><a href="manual.html">Abrir o manual completo</a></p></noscript>
     </section>
-    <nav class="os-dock" aria-label="Atalhos do desktop"><a href="#inicio" data-open="inicio" aria-label="Boas-vindas" title="Boas-vindas"><svg aria-hidden="true"><use href="#i-home"/></svg><span>Início</span></a><a href="deck.html" title="O baralho"><svg aria-hidden="true"><use href="#i-cards"/></svg><span>Baralho</span></a><a href="#como-jogar" data-open="como-jogar" title="Como jogar"><svg aria-hidden="true"><use href="#i-guide"/></svg><span>Como jogar</span></a><span class="dock-divider" aria-hidden="true"></span><a href="#imprimir" data-open="imprimir" title="Imprimir"><svg aria-hidden="true"><use href="#i-print"/></svg><span>Imprimir</span></a><a href="#sobre" data-open="sobre" title="Sobre o projeto"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Sobre</span></a></nav>
-    <p class="desktop-hint mono">Um clique para explorar. <span>Arraste as janelas para deixar do seu jeito.</span></p>
+    <section class="os-window content-window print-window" id="imprimir" aria-labelledby="print-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar a impressão" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar a impressão" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir a impressão" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="print-file">Imprimir</span></div>
+      <div class="window-body content-body">
+        <p class="overline">DA TELA PARA A MESA</p><h2>Imprima. Recorte.<br>Faça história.</h2><p>O baralho e o manual estão prontos para imprimir em casa ou levar à gráfica.</p>
+        <div class="print-options"><article><svg aria-hidden="true"><use href="#i-cards"/></svg><h3>O baralho completo</h3><p>Cartas de 63 × 88 mm, frente e verso, com os créditos das imagens.</p><button type="button" class="button button-primary" data-print="baralho" disabled>Imprimir baralho</button><p class="print-readiness" data-print-status="baralho" role="status">Preparando as cartas…</p></article><article><svg aria-hidden="true"><use href="#i-guide"/></svg><h3>Manual do jogo</h3><p>As regras, os modos de jogo e as jogadas especiais em duas páginas A4.</p><button type="button" class="button button-secondary" data-print="manual" disabled>Imprimir manual</button><p class="print-readiness" data-print-status="manual" role="status">Preparando o manual…</p></article></div>
+        <details class="print-help"><summary>Configuração da impressora</summary><p>Papel A4, escala 100%, gráficos de fundo ativados e sem cabeçalhos nem rodapés. No baralho, use frente e verso pela borda longa. Faça uma folha de teste antes de imprimir tudo.</p><p>A impressão inclui todas as cartas, mesmo com filtros ativos. Mantenha os créditos junto ao jogo.</p></details>
+        <noscript><p><a href="deck.html#imprimir">Imprimir o baralho</a> · <a href="manual.html">Imprimir o manual</a></p></noscript>
+      </div>
+    </section>
+    <section class="os-window app-window" id="creditos" aria-labelledby="credits-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar os créditos" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar os créditos" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir os créditos" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="credits-file">Créditos das imagens</span></div>
+      <iframe data-src="deck.html?desktop=1&amp;view=credits#creditos" title="Autoria e licenças das imagens"></iframe>
+      <noscript><p><a href="deck.html#creditos">Consultar os créditos das imagens</a></p></noscript>
+    </section>
+    <section class="os-window content-window about-window" id="sobre" aria-labelledby="about-file" tabindex="-1">
+      <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar sobre o projeto" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar sobre o projeto" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir sobre o projeto" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="about-file">Sobre o CompLine</span></div>
+      <div class="window-body content-body">
+        <img class="about-logo" src="img/museu-logo-white.png" width="5538" height="981" alt="Museu da Computação">
+        <p class="overline">MEMÓRIA QUE SE COMPARTILHA</p><h2>O museu também<br>cabe na sua mesa.</h2><p>CompLine é um jogo educativo do Museu da Computação da FACOM-UFU. Uma forma de descobrir quem e o que construiu o mundo digital, com histórias do Brasil e do mundo.</p><p>O nome junta computação e linha do tempo, com uma piscadela para <em>compiler</em>. A proposta é simples: aprender fazendo conexões.</p>
+        <p>Por enquanto, o jogo acontece na mesa. Uma versão jogável no navegador fica para um próximo capítulo.</p>
+        <div class="about-links"><a href="deck.html#creditos" data-open="creditos">Créditos das imagens →</a><a href="https://www.fontshare.com/fonts/array" target="_blank" rel="noopener noreferrer">Tipografia Array, por Frode Helland ↗</a><a href="https://github.com/matheusmedrado/museuComp" target="_blank" rel="noopener noreferrer">Código do projeto ↗</a></div>
+      </div>
+    </section>
   </main>
-  <footer class="os-footer mono"><span><i class="live-dot" aria-hidden="true"></i> Histórias que conectam.</span><span>Feito para descobrir, jogar e compartilhar. ↗</span><a href="https://github.com/matheusmedrado/museuComp">Código aberto</a></footer>
-  <div id="desktop-announcement" class="sr-only" role="status" aria-live="polite"></div>
+  </div>
+  <aside class="desktop-print-guide" aria-labelledby="desktop-print-title">
+    <h1 id="desktop-print-title">CompLine — arquivos para impressão</h1>
+    <p>Esta página é o desktop do CompLine. Para imprimir o conteúdo completo, use o aplicativo <strong>Imprimir</strong> no desktop ou abra um dos arquivos abaixo e use seu botão de impressão.</p>
+    <h2>Baralho completo</h2>
+    <p><a href="deck.html">Abrir o baralho e seus créditos</a>. A4, escala 100%, sem cabeçalhos e rodapés, com gráficos de fundo. Para frente e verso, vire pela borda longa.</p>
+    <h2>Manual do jogo</h2>
+    <p><a href="manual.html">Abrir o manual</a>. Duas páginas A4, escala 100%, sem cabeçalhos e rodapés.</p>
+    <p>Museu da Computação · FACOM-UFU</p>
+  </aside>
+  <div id="desktop-announcement" class="sr-only" role="status"></div>
 </body>
 </html>
