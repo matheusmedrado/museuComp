@@ -184,7 +184,8 @@ p { margin-top: 0; }
 .desktop-ready .is-dragging .window-titlebar { cursor: grabbing; }
 .desktop-ready .window-body { overflow: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #757986 var(--surface); }
 .desktop-ready .app-window iframe { min-height: 0; }
-.desktop-ready .os-window.is-maximized { left: 20px !important; top: 20px !important; width: calc(100% - 40px); height: calc(100% - 40px); max-height: none; }
+/* Expansion uses the workspace, not the icon rail: navigation stays reachable. */
+.desktop-ready .os-window.is-maximized { left: 20px !important; top: 20px !important; width: calc(100% - 144px); height: calc(100% - 40px); max-width: none; max-height: none; }
 
 @media (max-width: 900px) {
   .os-menubar { gap: 1rem; padding-inline: 1rem; }
