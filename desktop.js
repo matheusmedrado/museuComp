@@ -30,8 +30,10 @@ function openWindow(id, moveFocus = true) {
 
 function readHash(moveFocus = false) {
   const hash = location.hash.slice(1);
-  const id = legacySections[hash] || hash || 'inicio';
-  if (id.includes('.html')) return location.replace(id);
+  const legacy = Object.hasOwn(legacySections, hash) ? legacySections[hash] : undefined;
+  const id = legacy || hash || 'inicio';
+  // Only our fixed legacy destinations may navigate away from this document.
+  if (legacy && legacy.includes('.html')) return location.replace(legacy);
   if (byId.has(id)) openWindow(id, moveFocus);
 }
 
