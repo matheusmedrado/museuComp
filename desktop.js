@@ -151,6 +151,8 @@ for (const window of windows) {
     const action = button.dataset.windowAction;
     if (action === 'maximize') {
       const maximized = window.classList.toggle('is-maximized');
+      // Apps opened while this window was expanded may occupy its old slot.
+      if (!maximized) arrangeWindows();
       button.setAttribute('aria-pressed', String(maximized));
       button.title = maximized ? 'Restaurar' : 'Expandir';
       button.setAttribute('aria-label', (maximized ? 'Restaurar ' : 'Expandir ') + window.querySelector('.window-file').textContent);
