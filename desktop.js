@@ -12,7 +12,7 @@ let activeWindow;
 function focusWindow(window) {
   activeWindow = window;
   window.style.zIndex = ++layer;
-  for (const link of document.querySelectorAll('.os-menubar [data-open]')) {
+  for (const link of document.querySelectorAll('.desktop-shortcuts [data-open]')) {
     link.dataset.active = String(link.dataset.open === window.id && !window.hidden);
   }
 }
@@ -79,15 +79,14 @@ function hideWindow(window, action) {
   if (next) focusWindow(next);
   else {
     activeWindow = undefined;
-    document.querySelectorAll('.os-menubar [data-open]').forEach(link => link.dataset.active = 'false');
+    document.querySelectorAll('.desktop-shortcuts [data-open]').forEach(link => link.dataset.active = 'false');
   }
   setHash(next?.id || 'inicio');
   const launcher = lastLauncher.get(window.id);
-  const fallback = document.querySelector('.os-menubar [data-open="' + window.id + '"]')
-    || document.querySelector('.desktop-shortcuts [data-open="' + window.id + '"]')
-    || document.querySelector('.os-menubar [data-open="inicio"]');
+  const fallback = document.querySelector('.desktop-shortcuts [data-open="' + window.id + '"]')
+    || document.querySelector('.desktop-shortcuts [data-open="inicio"]');
   (launcher && !launcher.closest('[hidden]') ? launcher : fallback)?.focus({ preventScroll: true });
-  announcement.textContent = window.querySelector('.window-file').textContent + ': janela ' + (action === 'minimize' ? 'minimizada' : 'fechada') + '. Reabra pelo menu ou pelos atalhos.';
+  announcement.textContent = window.querySelector('.window-file').textContent + ': janela ' + (action === 'minimize' ? 'minimizada' : 'fechada') + '. Reabra pelos ícones do desktop.';
 }
 
 function escapeWindow(event) {
@@ -189,7 +188,7 @@ for (const window of windows) {
       const route = documentRoute(url);
       if (route) {
         event.preventDefault();
-        lastLauncher.set(route[0], document.querySelector('.os-menubar [data-open="' + route[0] + '"]'));
+        lastLauncher.set(route[0], document.querySelector('.desktop-shortcuts [data-open="' + route[0] + '"]'));
         openWindow(route[0], true, route[1]);
         setHash(...route);
       } else if (url.origin !== location.origin) {

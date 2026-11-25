@@ -14,11 +14,16 @@ o ano. Abra o [site do jogo](index.html) para conhecer o projeto e aprender a jo
 Use a busca e o filtro de categorias para explorar as cartas. A impressão sempre inclui o baralho completo.
 
 O início é um desktop escuro inspirado no Macintosh clássico, com fundo liso e janela
-centralizada. O menu e os ícones abrem o baralho, o manual, os créditos e a impressão
+centralizada. Os ícones coloridos abrem o início, o baralho, o manual e a impressão
 dentro do próprio sistema. No computador, arraste pela barra de título, expanda,
-minimize ou feche as janelas; reabra-as pelo menu ou pelos ícones. No celular, um
+minimize ou feche as janelas; reabra-as pelos ícones. No celular, um
 aplicativo ocupa a área de trabalho por vez, com rolagem dentro da janela.
 A tecla **Esc** fecha a janela ativa, inclusive quando o foco está no baralho ou manual.
+Uma abertura de 1,8 segundo apresenta o sistema uma vez por aba, sem depender da rede;
+**Pular abertura** ou **Esc** entram imediatamente. Links diretos e a preferência por
+movimento reduzido pulam essa abertura. O início mostra três cartas reais se organizando
+na linha do tempo; a animação termina e pode ser repetida pelo botão **↻**.
+Com movimento reduzido, as cartas e seus anos aparecem diretamente na posição final.
 Sem JavaScript, os textos do início e o manual continuam disponíveis.
 O visual escuro é só da tela: o manual mantém o papel claro na impressão e as cartas
 continuam com o mesmo molde compartilhado entre tela e A4. Não há framework nem build.

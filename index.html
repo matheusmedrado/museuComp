@@ -14,8 +14,19 @@
   <link rel="stylesheet" href="cards.css">
   <script src="desktop.js" type="module"></script>
   <script src="home.js" type="module"></script>
+  <script src="boot.js" type="module"></script>
 </head>
 <body class="home-page">
+  <section class="boot-screen" id="boot-screen" role="dialog" aria-modal="true" aria-labelledby="boot-title" hidden>
+    <div class="boot-content">
+      <svg class="boot-computer" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 5h40v42H12zM18 11h28v25H18zM8 47h48v11H8zM20 42h7m12 10h7M25 20v3m14-3v3m-14 6h14"/></svg>
+      <h2 id="boot-title">CompLine</h2>
+      <p class="boot-status" id="boot-status" role="status">Iniciando o desktop…</p>
+      <div class="boot-progress" aria-hidden="true"><span></span></div>
+      <button type="button" id="skip-boot">Pular abertura <span aria-hidden="true">↗</span></button>
+    </div>
+  </section>
+  <div id="os-shell">
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
     <symbol id="i-home" viewBox="0 0 40 40"><path class="icon-fill" d="M5 4h30v24H5zM13 32h14v4H13z"/><path d="M9 8h22v16H9zM16 28v4m8-4v4M13 14h3m8 0h3m-12 5h10"/></symbol>
@@ -26,17 +37,12 @@
     <symbol id="i-credits" viewBox="0 0 40 40"><path class="icon-fill" d="M4 7h32v27H4z"/><path d="M8 11h24v19H8zM8 26l8-8 6 6 4-4 6 6M26 15h2v2h-2z"/></symbol>
   </defs></svg>
   <header class="os-menubar">
-    <a class="museum-brand" href="#sobre" data-open="sobre" aria-label="Sobre o Museu da Computação"><img src="img/museu-logo-white.png" width="5538" height="981" alt="Museu da Computação"></a>
-    <nav aria-label="Aplicativos do CompLine">
-      <a href="#inicio" data-open="inicio">CompLine</a>
-      <a href="deck.html" data-open="baralho">Baralho</a>
-      <a href="manual.html" data-open="manual">Manual</a>
-      <a href="#imprimir" data-open="imprimir">Imprimir</a>
-    </nav>
+    <div class="museum-brand"><img src="img/museu-logo-white.png" width="5538" height="981" alt="Museu da Computação"></div>
     <time id="os-clock" aria-label="Hora atual"></time>
   </header>
   <main id="conteudo" class="desktop" aria-label="Desktop CompLine">
     <nav class="desktop-shortcuts" aria-label="Atalhos do desktop">
+      <a class="desktop-shortcut" href="#inicio" data-open="inicio"><svg aria-hidden="true"><use href="#i-home"/></svg><span>CompLine</span></a>
       <a class="desktop-shortcut" href="deck.html" data-open="baralho"><svg aria-hidden="true"><use href="#i-cards"/></svg><span>Baralho</span></a>
       <a class="desktop-shortcut" href="manual.html" data-open="manual"><svg aria-hidden="true"><use href="#i-guide"/></svg><span>Manual</span></a>
       <a class="desktop-shortcut" href="#imprimir" data-open="imprimir"><svg aria-hidden="true"><use href="#i-print"/></svg><span>Imprimir</span></a>
@@ -45,20 +51,17 @@
     <section class="os-window welcome-window" id="inicio" aria-labelledby="welcome-file" tabindex="-1">
       <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar boas-vindas" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar boas-vindas" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir boas-vindas" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="welcome-file">CompLine</span></div>
       <div class="window-body welcome-body">
-        <div class="welcome-copy">
-          <p class="welcome-kicker mono">UM JOGO. MUITAS CONEXÕES.</p>
-          <p class="welcome-wordmark" aria-label="CompLine">CompLine</p>
-          <h1>A história não<br>vem em ordem.</h1>
-          <p class="hero-description">Do primeiro algoritmo ao Pix. Conecte pessoas, ideias e invenções em uma linha do tempo — sem espiar os anos.</p>
-          <div class="actions"><a class="button button-primary" href="deck.html" data-open="baralho">Abrir o baralho <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-jogar" data-open="como-jogar">Como jogar →</a></div>
+        <div class="hero-intro">
+          <p class="welcome-kicker mono">A HISTÓRIA DA COMPUTAÇÃO, EM CARTAS.</p>
+          <h1 class="welcome-wordmark">CompLine</h1>
+          <p class="hero-description">Uma carta fora do tempo.<br><span>Você descobre onde ela entra.</span></p>
         </div>
-        <div class="hero-exhibit">
-          <p class="exhibit-label mono">UMA CARTA, DOIS LADOS</p>
-          <div id="hero-cards" class="hero-cards" aria-label="Amostra das cartas do baralho"><div class="hero-card"><p class="preview-loading">Carregando a coleção.<br><a href="deck.html" data-open="baralho">Abrir o baralho →</a></p></div><div class="hero-card" aria-hidden="true"></div></div>
-          <p class="exhibit-caption mono">O ano? Só depois do palpite.</p>
-        </div>
+        <figure class="timeline-exhibit" aria-labelledby="timeline-caption">
+          <div id="hero-cards" class="hero-cards" aria-label="Três descobertas encontram seu lugar na linha do tempo"><div class="hero-card"><div class="timeline-placeholder"></div></div><div class="hero-card"><div class="timeline-placeholder"></div></div><div class="hero-card"><div class="timeline-placeholder"></div></div></div>
+          <figcaption id="timeline-caption">Leia a pista. Encontre o lugar. Revele o ano.<button id="replay-hero" type="button" aria-label="Repetir animação da linha do tempo" title="Repetir animação" hidden>↻</button></figcaption>
+        </figure>
+        <div class="hero-actions"><a class="button button-primary" href="deck.html" data-open="baralho">Abrir o baralho <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-jogar" data-open="como-jogar">Como jogar →</a></div>
       </div>
-      <dl class="window-status hero-facts"><div><dt id="card-count">Um</dt><dd>baralho para descobrir</dd></div><div><dt>02</dt><dd>modos de jogar</dd></div><div><dt>2–4</dt><dd>jogadores ou equipes</dd></div></dl>
     </section>
     <section class="os-window content-window" id="como-jogar" aria-labelledby="rules-file" tabindex="-1">
       <div class="window-titlebar"><div class="window-controls" hidden><button type="button" data-window-action="close" aria-label="Fechar como jogar" title="Fechar">×</button><button type="button" data-window-action="minimize" aria-label="Minimizar como jogar" title="Minimizar">−</button><button type="button" data-window-action="maximize" aria-label="Expandir como jogar" aria-pressed="false" title="Expandir">↗</button></div><span class="window-file" id="rules-file">Como jogar</span></div>
@@ -107,6 +110,7 @@
       </div>
     </section>
   </main>
+  </div>
   <div id="desktop-announcement" class="sr-only" role="status"></div>
 </body>
 </html>
