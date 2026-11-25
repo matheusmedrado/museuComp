@@ -13,6 +13,14 @@ Não há dependências nem etapa de build. Clique na carta ou use **Virar carta*
 o ano. Abra o [site do jogo](index.html) para conhecer o projeto e aprender a jogar.
 Use a busca e o filtro de categorias para explorar as cartas. A impressão sempre inclui o baralho completo.
 
+O início é um desktop escuro inspirado nos primeiros sistemas gráficos: os atalhos abrem
+janelas com as regras, a impressão e a história do projeto. No computador, arraste pela
+barra de título, expanda, minimize ou feche as janelas; reabra-as pelo menu ou pelo dock.
+No celular, o conteúdo segue o fluxo da página. A tecla **Esc** fecha a janela ativa.
+Sem JavaScript, os textos do início e o manual continuam disponíveis.
+O visual escuro é só da tela: o manual mantém o papel claro na impressão e as cartas
+continuam com o mesmo molde compartilhado entre tela e A4. Não há framework nem build.
+
 Em **Imprimir baralho**, escolha papel **A4**, escala **100%**, sem cabeçalhos e rodapés
 e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda longa**:
 cada página de frentes é seguida pela página de versos com as colunas espelhadas.
