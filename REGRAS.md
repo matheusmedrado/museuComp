@@ -1,4 +1,4 @@
-# Timeline: Duvido!
+# CompLine
 
 Monte uma linha do tempo da computação sem olhar os anos. Se uma jogada parecer fora de ordem, mande um **Duvido!**
 

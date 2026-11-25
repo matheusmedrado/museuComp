@@ -96,7 +96,7 @@
       "copies": 5,
       "timing": "declare_duvido",
       "actor": "challenger",
-      "text": "Jogue ao dizer Duvido! Se a jogada estiver errada, quem encaixou compra 1 carta de Timeline a mais.",
+      "text": "Jogue ao dizer Duvido! Se a jogada estiver errada, quem encaixou compra 1 carta de CompLine a mais.",
       "effect": { "type": "increase_failed_placement_draw", "amount": 1 }
     },
     {
@@ -105,7 +105,7 @@
       "copies": 4,
       "timing": "before_failed_duvido_penalty",
       "actor": "challenger",
-      "text": "Se seu Duvido! falhar, evite a compra de 1 carta de Timeline de castigo.",
+      "text": "Se seu Duvido! falhar, evite a compra de 1 carta de CompLine de castigo.",
       "effect": { "type": "reduce_failed_duvido_draw", "amount": 1 }
     },
     {
