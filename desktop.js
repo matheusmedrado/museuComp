@@ -54,7 +54,7 @@ function hideWindow(window, action) {
   setHash(next?.id || 'inicio');
   const launcher = lastLauncher.get(window.id);
   const fallback = document.querySelector(`.os-dock [data-open="${window.id}"]`);
-  (launcher && !launcher.closest('[hidden]') ? launcher : fallback)?.focus({ preventScroll: true });
+  (launcher && !launcher.closest('[hidden]') ? launcher : fallback)?.focus({ preventScroll: wideScreen.matches });
   announcement.textContent = `${window.querySelector('.window-file').textContent.trim()}: janela ${action === 'minimize' ? 'minimizada' : 'fechada'}. Reabra pelo menu ou pelos atalhos.`;
 }
 
