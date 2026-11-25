@@ -1,12 +1,15 @@
 import { fetchJSON, frontFace, backFace, applyImage } from './cards.js';
 
 // Old presentation links keep pointing to the relevant part of the new site.
-const legacySections = { '1': 'conteudo', '2': 'sobre', '3': 'como-jogar', '4': 'como-jogar', '5': 'como-jogar', '6': 'imprimir', '7': 'imprimir' };
+const legacySections = { '1': '#conteudo', '2': '#como-jogar', '3': '#como-jogar', '4': 'manual.html#bits-title', '5': 'deck.html#deck-title', '6': '#imprimir', '7': '#imprimir' };
 function redirectLegacyHash() {
   const section = legacySections[location.hash.slice(1)];
-  if (section) {
-    history.replaceState(null, '', `#${section}`);
-    document.getElementById(section).scrollIntoView();
+  if (!section) return;
+  if (section.startsWith('#')) {
+    history.replaceState(null, '', section);
+    document.getElementById(section.slice(1)).scrollIntoView();
+  } else {
+    location.replace(section);
   }
 }
 redirectLegacyHash();
