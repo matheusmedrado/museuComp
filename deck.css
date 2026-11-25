@@ -19,21 +19,22 @@ button:disabled { cursor: wait; opacity: .55; }
 .collection-heading h2 span { display: block; margin-top: .6rem; font-size: .75rem; font-weight: 400; letter-spacing: 0; color: var(--soft-ink); }
 .deck-tools { display: flex; align-items: end; flex-wrap: wrap; gap: 1rem; padding: 1.2rem; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); }
 .deck-tools label { display: block; margin-bottom: .35rem; font: .65rem var(--mono); color: var(--soft-ink); }
-.deck-tools input, .deck-tools select { min-height: 44px; padding: .65rem .9rem; background: #121626; border: 1px solid #606a89; color: var(--ink); border-radius: 2px; font-size: .83rem; width: 100%; }
-.deck-tools input::placeholder { color: #a3aac3; }
+.deck-tools input, .deck-tools select { min-height: 44px; padding: .65rem .9rem; background: var(--surface-inset); border: 1px solid var(--line); color: var(--ink); border-radius: 2px; font-size: .83rem; width: 100%; }
+.deck-tools input::placeholder { color: var(--soft-ink); }
 .search-field { flex: 1 1 18rem; }
 .category-field { flex: 1 1 12rem; }
 .deck-tools button { min-height: 44px; }
 .play-note { color: var(--soft-ink); font-size: .75rem; }
 #status { font: .7rem/1.6 var(--mono); margin: 1.5rem 0 1.3rem; color: var(--soft-ink); }
-.deck { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem 1.5rem; padding: 0 0 4rem; margin: 0; list-style: none; }
-.deck > li { min-width: 0; container-type: inline-size; display: flex; flex-direction: column; }
+.deck { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 2rem 1.5rem; padding: 0 0 4rem; margin: 0; list-style: none; }
+.deck > li { min-width: 0; width: 100%; max-width: 336px; justify-self: center; container-type: inline-size; display: flex; flex-direction: column; }
 .deck .card { display: flex; flex: 1 0 auto; aspect-ratio: auto; min-height: calc(100cqw * 88 / 63); box-shadow: 0 .4rem 1rem #17183815; cursor: pointer; }
+.deck .clue { font-size: 4.3cqw; line-height: 1.45; }
 .deck .frame { flex: 1; min-width: 0; height: auto; overflow: visible; }
 .deck .card-head, .deck .card-foot { flex-wrap: wrap; row-gap: .35em; }
-.flip { width: 100%; min-height: 44px; margin-top: .7rem; padding: .5rem; border: 1px solid #626e91; border-radius: 3px; color: var(--accent); background: var(--surface); font: .65rem var(--mono); }
-.flip:hover { background: #2a324b; border-color: var(--accent); }
-.notice, .empty-state { background: var(--surface-raised); padding: 1.5rem; border-left: 3px solid var(--accent); border-radius: 3px; margin-block: 1.5rem; font-size: .85rem; }
+.flip { width: 100%; min-height: 44px; margin-top: .7rem; padding: .5rem; border: 1px solid var(--line); border-radius: 3px; color: var(--accent); background: var(--surface-raised); font: .65rem var(--mono); }
+.flip:hover { background: var(--surface); border-color: var(--accent); }
+.notice, .empty-state { background: var(--surface-raised); padding: 1.5rem; border: 1px solid var(--line); border-radius: 3px; margin-block: 1.5rem; font-size: .85rem; }
 .credits { border-top: 1px solid var(--line); padding-block: 3rem; }
 .credits h2 { font-size: 1.8rem; }
 .credits > p:not(.overline) { font-size: .82rem; color: var(--soft-ink); max-width: 48rem; }
@@ -42,8 +43,7 @@ button:disabled { cursor: wait; opacity: .55; }
 .credit-source { display: block; color: var(--accent); }
 .credit-note { margin: .25rem 0 0; color: var(--soft-ink); font-size: .7rem; }
 #print-deck { display: none; }
-@media (max-width: 1000px) { .deck { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 760px) { .deck-head { padding-block: 2.5rem 2rem; } .deck-summary { display: none; } .print-panel { flex-direction: column; align-items: start; gap: 1.5rem; padding: 1.4rem; } .print-action { max-width: none; width: 100%; } .deck { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1rem; } .collection-heading { flex-direction: column; align-items: start; } .credits ul { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .deck-head { padding-block: 2.5rem 2rem; } .deck-summary { display: none; } .print-panel { flex-direction: column; align-items: start; gap: 1.5rem; padding: 1.4rem; } .print-action { max-width: none; width: 100%; } .deck { gap: 1.5rem 1rem; } .collection-heading { flex-direction: column; align-items: start; } .credits ul { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .deck { grid-template-columns: 1fr; padding-inline: .8rem; } .deck-tools { padding: 1rem; } .deck-tools button { width: 100%; } }
 @media (prefers-reduced-motion: no-preference) { .deck .card { animation: reveal .2s ease-out; } @keyframes reveal { from { transform: perspective(32rem) rotateY(15deg); opacity: .65; } } }
 
@@ -55,17 +55,16 @@ button:disabled { cursor: wait; opacity: .55; }
   .in-desktop .site-header, .in-desktop .site-footer,
   .in-desktop .deck-head, .in-desktop .print-panel,
   .in-desktop .collection-heading, .in-desktop .play-note { display: none; }
-  .in-desktop .screen { width: calc(100% - 2.5rem); padding-top: 1.2rem; }
+  .in-desktop .screen { width: calc(100% - 4rem); padding-top: 1.5rem; }
   .in-desktop .deck-tools { padding: 0 0 1rem; border: 0; border-bottom: 1px solid var(--line); }
-  .in-desktop .deck-tools input, .in-desktop .deck-tools select { background: #1d1e27; }
-  .in-desktop .deck { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.7rem 1.2rem; padding-bottom: 2rem; }
+  .in-desktop .deck { padding-bottom: 2rem; }
   .in-desktop:not(.credits-app) .credits { display: none; }
   .in-desktop.credits-app .screen { display: none; }
   .in-desktop.credits-app .credits { width: calc(100% - 3rem); padding-top: 1.5rem; border: 0; }
 }
 @media screen and (max-width: 620px) {
   .in-desktop .screen { width: calc(100% - 1.5rem); padding-top: .8rem; }
-  .in-desktop .deck { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem .8rem; padding-inline: 0; }
+  .in-desktop .deck { gap: 1.5rem 1rem; padding-inline: 0; }
   .in-desktop .deck-tools { gap: .8rem; }
   .in-desktop .search-field, .in-desktop .category-field { flex-basis: 100%; }
   .in-desktop .deck-tools label { font-size: .65rem; }
@@ -113,5 +112,5 @@ button:disabled { cursor: wait; opacity: .55; }
   .credits li { break-inside: avoid; border-top: 1px solid #bbb; padding-block: 1mm 1.5mm; }
   .credits li + li { margin-top: 0; }
   .credits a, .credits > p:not(.overline), .credit-note { color: inherit; }
-  .credits a::after { content: " — " attr(href); font-size: 7.5pt; }
+  .credits a::after { content: " · " attr(href); font-size: 7.5pt; }
 }

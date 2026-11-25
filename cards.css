@@ -1,5 +1,5 @@
 /* One design for every generated face, on screen and on paper. */
-.card { --paper: #fff; --muted: #dedff2; container-type: inline-size; width: 100%; aspect-ratio: 63 / 88; background: var(--navy); color: var(--paper); padding: 7%; border-radius: 4%; }
+.card { --navy: #2e3192; --cyan: #7fe7f5; --paper: #fff; --muted: #dedff2; container-type: inline-size; width: 100%; aspect-ratio: 63 / 88; background: var(--navy); color: var(--paper); padding: 7%; border-radius: 4%; }
 .frame { position: relative; height: 100%; display: flex; flex-direction: column; min-width: 0; }
 .card-head { display: flex; align-items: center; justify-content: space-between; padding: 0 0 6%; gap: 4%; border-bottom: 1px solid #ffffff40; }
 .wordmark { font: 400 6cqw/1 var(--logo-font, system-ui), sans-serif; letter-spacing: 0; }

@@ -12,11 +12,7 @@
 }
 }
 @media screen {
-  :root { --navy: #a1eef5; --night: #15163f; --ink: #f0f0f6; --muted: #b2b5cb; --paper: #1b1e33; --wash: #24283f; --line: #414963; }
-  .page { box-shadow: 5px 6px 0 #04071666; }
-  .hero, .mini:not(.guess), thead th { background: #2e3192; color: #fff; }
-  .hero { border: 1px solid #6570ae; }
-  .number { color: #101a2b; }
+  :root { --muted: var(--soft-ink); --paper: var(--surface); --wash: var(--surface-raised); }
   .brand-link > span:first-child { color: var(--accent); }
 }
 
@@ -24,7 +20,7 @@
 [hidden] { display: none !important; }
 body { margin: 0; background: var(--canvas); color: var(--ink); font: 1rem/1.45 system-ui, sans-serif; }
 a { color: inherit; text-underline-offset: .2em; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 .hero a:focus-visible { outline-color: var(--cyan); }
 .toolbar, main { width: min(60rem, calc(100% - 2rem)); margin-inline: auto; }
 .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; padding-block: 1.25rem; color: var(--navy); font-size: .9rem; }
@@ -82,10 +78,25 @@ figcaption { margin-top: .35em; color: var(--muted); font-size: .86em; text-alig
 .tile h3, .note h3 { margin: .14em 0 .23em; font-size: 1.12em; line-height: 1.15; color: var(--navy); }
 .tile p:not(.tag), .note p { font-size: .95em; }
 .tag { color: var(--navy); }
-.note { margin-top: .75em; border-inline-start: .22em solid var(--navy); }
+.note { margin-top: .75em; }
 .page-foot { display: flex; justify-content: space-between; gap: .75em; margin-top: auto; padding-top: 1.35em; color: var(--muted); }
 
-@media screen { .number { color: #101a2b; } }
+@media screen {
+  .toolbar { color: var(--ink); }
+  .toolbar button { border-radius: 3px; font-size: .8rem; }
+  .page, .tile, .note, .example { border-radius: 3px; }
+  .page { box-shadow: none; }
+  .hero { background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 0 1.5rem; }
+  .hero h1, .hero h1 span, .hero h2 span { color: var(--accent); }
+  .hero h2 { font-size: 2.6rem; font-weight: 550; }
+  .rule h2 { font-size: 1.2rem; font-weight: 600; }
+  .number { color: var(--accent); border: 1px solid var(--line); border-radius: 2px; background: var(--wash); }
+  .rule li::marker, caption, .tag { color: var(--accent); }
+  .outcomes tbody th, .tile h3, .note h3 { color: var(--ink); }
+  thead th { background: var(--wash); color: var(--ink); }
+  .mini { border-color: var(--line); }
+  .mini.guess { border-color: var(--accent); color: var(--accent); }
+}
 @media screen and (max-width: 36rem) {
   .setup, .tiles { grid-template-columns: 1fr; }
   .hero { padding: 1.15em; }
@@ -112,7 +123,7 @@ figcaption { margin-top: .35em; color: var(--muted); font-size: .86em; text-alig
 @media screen {
   .in-desktop body { background: var(--surface); }
   .in-desktop .site-header, .in-desktop .toolbar { display: none; }
-  .in-desktop main { width: 100%; padding: 0; }
+  .in-desktop main { width: min(100%, 1080px); padding: 0; }
   .in-desktop .page { border: 0; border-radius: 0; box-shadow: none; margin: 0; padding: 1.5rem 2rem 2rem; }
   .in-desktop .hero { background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0 0 1.5rem; }
   .in-desktop .hero .brand, .in-desktop .page-foot { display: none; }

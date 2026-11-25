@@ -1,4 +1,4 @@
-# CompLine — Complexidade
+# CompLine: Complexidade
 
 Expansão opcional de **2 a 4 jogadores ou equipes**, por cima do
 [Modo Hacker](../../REGRAS.md). O baralho de CompLine, o ano como resposta e o

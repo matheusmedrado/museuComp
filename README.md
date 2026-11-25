@@ -14,10 +14,14 @@ o ano. Abra o [site do jogo](index.html) para conhecer o projeto e aprender a jo
 Use a busca e o filtro de categorias para explorar as cartas. A impressão sempre inclui o baralho completo.
 
 O início é um desktop escuro inspirado no Macintosh clássico, com fundo liso e janela
-centralizada. Os ícones coloridos abrem o início, o baralho, o manual e a impressão
+centralizada na área útil e paleta azul, ciano e cinza da apresentação original.
+Os ícones coloridos abrem o início, o baralho, o manual e a impressão
 dentro do próprio sistema. No computador, arraste pela barra de título, expanda,
 minimize ou feche as janelas; reabra-as pelos ícones. No celular, um
 aplicativo ocupa a área de trabalho por vez, com rolagem dentro da janela.
+Novas janelas formam uma pilha em escada, mantendo as anteriores à vista; janelas
+arrastadas ficam onde você as deixou. As cartas do catálogo têm tamanho de leitura
+limitado: expandir a janela acrescenta espaço e colunas, sem ampliar as cartas.
 A tecla **Esc** fecha a janela ativa, inclusive quando o foco está no baralho ou manual.
 Uma abertura de 1,8 segundo apresenta o sistema uma vez por aba, sem depender da rede;
 **Pular abertura** ou **Esc** entram imediatamente. Links diretos e a preferência por

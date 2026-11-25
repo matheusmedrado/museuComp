@@ -12,15 +12,29 @@ let activeWindow;
 function focusWindow(window) {
   activeWindow = window;
   window.style.zIndex = ++layer;
+  for (const item of windows) item.classList.toggle('is-active', item === window);
   for (const link of document.querySelectorAll('.desktop-shortcuts [data-open]')) {
     link.dataset.active = String(link.dataset.open === window.id && !window.hidden);
   }
 }
 
-function placeWindow(window) {
+function arrangeWindows() {
   if (!wideScreen.matches) return;
-  window.style.left = Math.max(16, (desktop.clientWidth - window.offsetWidth) / 2) + 'px';
-  window.style.top = Math.max(16, (desktop.clientHeight - window.offsetHeight) / 2) + 'px';
+  const stack = windows.filter(window => !window.hidden && !window.classList.contains('is-maximized') && !window.dataset.dragged)
+    .sort((a, b) => Number(a.style.zIndex) - Number(b.style.zIndex));
+  if (!stack.length) return;
+  const workspaceWidth = desktop.clientWidth - 124;
+  const width = Math.max(...stack.map(window => window.offsetWidth));
+  const height = Math.max(...stack.map(window => window.offsetHeight));
+  const gaps = Math.max(1, stack.length - 1);
+  const stepX = Math.min(24, Math.max(0, workspaceWidth - width - 32) / gaps);
+  const stepY = Math.min(28, Math.max(0, desktop.clientHeight - height - 32) / gaps);
+  const left = Math.max(16, (workspaceWidth - width - stepX * (stack.length - 1)) / 2);
+  const top = Math.max(16, (desktop.clientHeight - height - stepY * (stack.length - 1)) / 2);
+  stack.forEach((window, index) => {
+    window.style.left = left + index * stepX + 'px';
+    window.style.top = top + index * stepY + 'px';
+  });
 }
 
 function loadFrame(window, section = '') {
@@ -53,8 +67,8 @@ function openWindow(id, moveFocus = true, section = '') {
     loadFrame(byId.get('baralho'));
     loadFrame(byId.get('manual'));
   }
-  if (wasHidden && (!window.style.left || !window.style.top)) placeWindow(window);
   focusWindow(window);
+  if (wasHidden) arrangeWindows();
   if (moveFocus) window.focus({ preventScroll: true });
   // Focus the shell first: a loaded section may then transfer focus into its frame.
   loadFrame(window, section);
@@ -154,7 +168,8 @@ for (const window of windows) {
     titlebar.setPointerCapture(event.pointerId);
     window.classList.add('is-dragging');
     function move(event) {
-      const maxLeft = Math.max(0, desktop.clientWidth - window.offsetWidth - 8);
+      window.dataset.dragged = 'true';
+      const maxLeft = Math.max(8, desktop.clientWidth - window.offsetWidth - 124);
       const maxTop = Math.max(0, desktop.clientHeight - window.offsetHeight - 8);
       window.style.left = Math.max(8, Math.min(maxLeft, event.clientX - bounds.left - offsetX)) + 'px';
       window.style.top = Math.max(8, Math.min(maxTop, event.clientY - bounds.top - offsetY)) + 'px';
@@ -226,11 +241,12 @@ addEventListener('resize', () => {
   for (const window of windows) {
     window.style.left = '';
     window.style.top = '';
-    if (!window.hidden) placeWindow(window);
+    delete window.dataset.dragged;
   }
   if (!wideScreen.matches && activeWindow) {
     for (const window of windows) if (window !== activeWindow) window.hidden = true;
   }
+  arrangeWindows();
 });
 readHash(Boolean(location.hash));
 
