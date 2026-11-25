@@ -1,7 +1,7 @@
-# Timeline: Duvido! — Complexidade
+# CompLine — Complexidade
 
 Expansão opcional de **2 a 4 jogadores ou equipes**, por cima do
-[Modo Hacker](../../REGRAS.md). O baralho de Timeline, o ano como resposta e o
+[Modo Hacker](../../REGRAS.md). O baralho de CompLine, o ano como resposta e o
 objetivo de esvaziar a mão continuam os mesmos.
 
 ## Preparar a mesa
@@ -34,7 +34,7 @@ Evento, com versos iguais, e uma ficha por Personagem, Equipamento e Combo.
 
 | Evento | O que muda |
 | --- | --- |
-| **Bug** | Se o encaixe estiver errado, quem encaixou compra uma carta de Timeline extra. |
+| **Bug** | Se o encaixe estiver errado, quem encaixou compra uma carta de CompLine extra. |
 | **Backup** | Evita a compra de castigo de quem duvidou e errou. Quem encaixou ainda ganha seu Bit. |
 | **Patch** | Mude o encaixe de uma carta da jogada. Na Aposta dupla, não mova a outra carta. O palpite de Ano cravado não muda. |
 | **Firewall** | Cancela o Bug, não o Duvido!. Ainda se aplicam os resultados Hacker. |
@@ -43,11 +43,11 @@ Cada pessoa pode jogar **um Evento por turno**, mesmo fora da própria vez.
 Quem usou Bug não pode usar Backup no mesmo turno; quem responde a Bug precisa
 escolher entre corrigir o encaixe com Patch e cancelar o Bug com Firewall. Em
 Aposta dupla, Bug acrescenta só uma carta à compra total, não uma por encaixe;
-se o monte de Timeline não puder cobrir uma compra de castigo, use a regra dos
+se o monte de CompLine não puder cobrir uma compra de castigo, use a regra dos
 Bits do Hacker.
 
 Exemplo: alguém joga Bug contra sua Aposta dupla. Se você usar Firewall e um
-encaixe estiver errado, compre duas cartas de Timeline, não três; quem duvidou
+encaixe estiver errado, compre duas cartas de CompLine, não três; quem duvidou
 ainda ganha o Bit. Se usar Patch no lugar, o Bug só terá efeito se a jogada
 continuar errada.
 
@@ -60,9 +60,9 @@ segunda; se só houver uma, fique com ela.
 
 ## Equipamentos
 
-Ao encaixar corretamente uma carta de Timeline que tenha um Equipamento
+Ao encaixar corretamente uma carta de CompLine que tenha um Equipamento
 correspondente, você pode pegar a ficha e instalá-la à sua frente. A carta de
-Timeline **fica na linha**; a ficha não conta como carta na mão. A carta inicial
+CompLine **fica na linha**; a ficha não conta como carta na mão. A carta inicial
 da partida não dá Equipamento a ninguém.
 
 Você tem **um espaço**. Se já tiver um Equipamento, pode manter o atual ou
@@ -74,7 +74,7 @@ começa no fim do turno, então não vale no encaixe que o conquistou.
 
 Um Combo acontece quando suas cartas ficam lado a lado **na ordem indicada**,
 com o encaixe certo e pelo menos uma delas vinda da sua jogada. Elas podem ter
-anos iguais: ambas as ordens continuam certas para Timeline, mas só a ordem
+anos iguais: ambas as ordens continuam certas para CompLine, mas só a ordem
 indicada vale para o Combo. Não precisa ter sido você quem encaixou a outra carta.
 
 Vire a ficha do Combo para marcar que ele foi usado. Quem o completa ganha
@@ -94,7 +94,7 @@ dupla e, se o Combo ainda não saiu, também o Bit e o Evento do Combo.
 ## Dados para a versão online
 
 O [catálogo](cartas.json) é versionado e usa os IDs de
-[`cards.json`](../../cards.json) para referenciar Timeline. Os IDs de Personagem,
+[`cards.json`](../../cards.json) para referenciar CompLine. Os IDs de Personagem,
 Evento, Equipamento e Combo têm escopos separados. Monte o baralho de Eventos
 com o número de cópias declarado no catálogo; dê a cada cópia uma identidade
 na partida. Use os gatilhos, atores, condições e efeitos estruturados para o
@@ -103,7 +103,7 @@ jogo; os campos `name`, `abilityName` e `text` são só para exibição.
 O estado da expansão acompanha os Personagens escolhidos, a mão privada de
 Eventos, monte e descarte de Eventos, o Equipamento público de cada jogador,
 os Combos já usados e os limites do turno. As fichas não entram na mão de
-Timeline nem no desempate. A expansão não altera a regra de vitória Hacker.
+CompLine nem no desempate. A expansão não altera a regra de vitória Hacker.
 
 Valide o catálogo com `node --test expansoes/complexidade/cartas.test.mjs`.
 Ainda não há integração com a versão web nem teste de equilíbrio em mesa.

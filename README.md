@@ -1,6 +1,6 @@
-# museuComp
+# CompLine
 
-**Timeline: Duvido!** é um jogo de cartas em português sobre a história da computação, para o Museu da Computação da FACOM-UFU.
+**CompLine** é um jogo de cartas em português sobre a história da computação, para o Museu da Computação da FACOM-UFU.
 
 Veja as [regras completas](REGRAS.md) para jogar nos modos Explorador e Hacker.
 Para levar as regras à mesa, abra o [manual para imprimir](manual.html) pelo servidor local e escolha **Imprimir manual** em papel **A4** (duas páginas).
@@ -10,7 +10,8 @@ Para levar as regras à mesa, abra o [manual para imprimir](manual.html) pelo se
 Na raiz do repositório, execute `python3 -m http.server 8000` e abra
 [http://localhost:8000/deck.html](http://localhost:8000/deck.html).
 Não há dependências nem etapa de build. Clique na carta ou use **Virar carta** para conferir
-o ano. Abra a [apresentação](index.html) para ver um resumo das regras e o protótipo original.
+o ano. Abra o [site do jogo](index.html) para conhecer o projeto e aprender a jogar.
+Use a busca e o filtro de categorias para explorar as cartas. A impressão sempre inclui o baralho completo.
 
 Em **Imprimir baralho**, escolha papel **A4**, escala **100%**, sem cabeçalhos e rodapés
 e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda longa**:
@@ -22,15 +23,18 @@ mantenha-os junto ao baralho impresso.
 
 O visual aprovado no Labs é usado nas 66 cartas, na tela e na impressão.
 A frente traz imagem ditherizada, categoria, nome e dica, sem revelar o ano;
-o verso traz só o ano como resposta, com a marca **Timeline: Duvido!** e o rodapé
+o verso traz só o ano como resposta, com a marca **CompLine** e o rodapé
 **Museu da Computação**. Os dois modos usam o mesmo baralho: Bits podem ser
 representados por tampinhas ou moedas; não são necessárias cartas de ação.
 
-Frentes e versos são gerados pelos moldes `front` e `back` em `deck.html`,
-preenchidos a partir de `cards.json` em `deck.js`. O Labs e seu comparador foram
+Frentes e versos são gerados pelos moldes compartilhados em `cards.js`,
+preenchidos a partir de `cards.json` em `deck.js` e na amostra de `home.js`. O Labs e seu comparador foram
 retirados porque a proposta passou a ser o visual do baralho completo.
 Na tela as cartas crescem com o texto; na impressão mantêm 63 × 88 mm, com a
 imagem ajustada para acomodar a dica e os créditos sem ultrapassar o corte.
+
+O site usa a marca **CompLine**, uma junção de computação e linha do tempo com um
+aceno a *compiler*. As regras e o catálogo permanecem os mesmos.
 
 O logo fornecido pelo museu está em `img/museu-logo.png`. As cartas usam só seu símbolo,
 recortado sem redesenho em `img/museu-symbol.png`, com transparência preservada e
@@ -59,5 +63,13 @@ A lista de créditos em [deck.html](deck.html#creditos) vem de
 [img/cards/credits.json](img/cards/credits.json).
 
 Edite os dados em `cards.json`, as opções de dithering (`dither`) e as ilustrações
-SVG em `deck.js`, e a aparência em `deck.css`. O catálogo e os moldes HTML podem
+SVG em `cards.js`, e a aparência das cartas em `cards.css`.
+A aparência do site fica em `site.css` e os estilos de navegação do baralho e
+impressão ficam em `deck.css`. O catálogo e os moldes HTML podem
 ser reaproveitados em uma futura versão jogável online.
+
+## Próximo capítulo: jogar no navegador
+
+O jogo online **não está implementado**. O [plano da versão web](PLANO-WEB.md)
+descreve o primeiro modo local, a arquitetura, as regras, os critérios de aceite e
+as etapas até testar o jogo antes de imprimir, sem adicionar backend agora.

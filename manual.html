@@ -3,26 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Manual de Timeline: Duvido! · Museu da Computação</title>
+  <title>Manual de CompLine · Museu da Computação</title>
+  <meta name="description" content="Manual de CompLine: prepare a mesa, aprenda as regras e imprima o guia em duas páginas A4.">
+  <link rel="icon" href="img/museu-symbol.png">
+  <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="manual.css">
   <script src="manual.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header"><div class="header-inner container"><a class="brand-link" href="index.html" aria-label="CompLine, início">Comp<span>Line</span>.</a><nav aria-label="Navegação principal"><a href="index.html#como-jogar">Como jogar</a><a href="deck.html">O baralho</a><a href="manual.html" aria-current="page">Manual <span aria-hidden="true">↗</span></a></nav><a class="museum-link" href="index.html#sobre"><img src="img/museu-logo.png" width="5539" height="981" alt="Museu da Computação — sobre o projeto"></a></div></header>
   <nav class="toolbar" aria-label="Navegação do manual">
-    <a href="index.html#4">← Apresentação</a>
+    <a href="index.html">← Voltar ao início</a>
     <a href="deck.html">Ver o baralho</a>
     <button type="button" id="print-manual" hidden>Imprimir manual</button>
   </nav>
 
-  <main>
+  <main id="conteudo">
     <article class="page" aria-labelledby="manual-title">
       <header class="hero">
         <div class="brand">
-          <img src="img/museu-symbol.png" width="1321" height="864" alt="">
-          <span>Museu da Computação <small>FACOM · UFU</small></span>
+          <img src="img/museu-logo.png" width="5539" height="981" alt="Museu da Computação">
+          <span class="mono">FACOM · UFU</span>
         </div>
         <p class="label">Manual de jogo</p>
-        <h1 id="manual-title">Timeline: <span>Duvido!</span></h1>
+        <h1 id="manual-title">Comp<span>Line</span></h1>
         <p>Monte a linha do tempo da computação sem olhar os anos. Se uma jogada parecer fora de ordem, mande um <strong>Duvido!</strong></p>
       </header>
 
@@ -89,7 +94,7 @@
 
     <article class="page" aria-labelledby="strategy-title">
       <header class="hero continuation">
-        <p class="label">Timeline: Duvido!</p>
+        <p class="label">CompLine</p>
         <h2 id="strategy-title">Bits, modos <span>e fim de jogo</span></h2>
         <p>Escolha o que fazer antes de encaixar. Se for dar um palpite de Ano cravado, anuncie na hora do encaixe.</p>
       </header>
@@ -147,5 +152,6 @@
       <footer class="page-foot"><span>Museu da Computação · FACOM/UFU</span><span>02 / 02</span></footer>
     </article>
   </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand-link" href="index.html">Comp<span>Line</span>.</a><p>Um jogo do Museu da Computação · FACOM / UFU</p><div><a href="deck.html#creditos">Créditos das imagens</a><a href="https://github.com/matheusmedrado/museuComp">Código do projeto ↗</a></div></div></footer>
 </body>
 </html>

@@ -12,11 +12,12 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-body { margin: 0; background: var(--night); color: var(--ink); font: 1rem/1.45 system-ui, sans-serif; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font: 1rem/1.45 system-ui, sans-serif; }
 a { color: inherit; text-underline-offset: .2em; }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
+.hero a:focus-visible { outline-color: var(--cyan); }
 .toolbar, main { width: min(60rem, calc(100% - 2rem)); margin-inline: auto; }
-.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; padding-block: 1.25rem; color: #dedff2; font-size: .9rem; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; padding-block: 1.25rem; color: var(--navy); font-size: .9rem; }
 .toolbar button { margin-inline-start: auto; padding: .6em 1em; border: 0; border-radius: .35rem; background: var(--cyan); color: var(--night); font: inherit; font-weight: 750; cursor: pointer; }
 main { padding-bottom: 1.5rem; }
 .page {
@@ -26,6 +27,7 @@ main { padding-bottom: 1.5rem; }
   padding: clamp(1rem, 4vw, 2.75rem);
   border-radius: .8rem;
   background: var(--paper);
+  border: 1px solid var(--line);
 }
 .hero { position: relative; padding: 1.4em 1.65em; border-radius: .6rem; background: var(--navy); color: var(--paper); border-bottom: .18em solid var(--cyan); }
 .hero p { max-width: 42em; margin: 0; }
@@ -36,7 +38,8 @@ main { padding-bottom: 1.5rem; }
 .hero h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
 .hero h1 span, .hero h2 span { color: var(--cyan); }
 .brand { display: flex; align-items: center; gap: .7em; margin-bottom: 1.3em; font-weight: 650; }
-.brand img { width: 2.2em; height: auto; filter: brightness(0) invert(1); }
+.brand img { width: min(230px, 75%); height: auto; filter: brightness(0) invert(1); }
+.brand > span { font-size: .6em; color: var(--cyan); }
 .brand small { display: block; font: 500 .65em/1.3 var(--mono); color: #dedff2; }
 .rule { margin-top: 1.3em; }
 .rule h2 { display: flex; align-items: center; gap: .5em; margin: 0 0 .45em; font-size: 1.42em; line-height: 1.1; letter-spacing: -.025em; }
@@ -83,7 +86,7 @@ figcaption { margin-top: .35em; color: var(--muted); font-size: .86em; text-alig
   body { background: var(--paper); font-size: 10.5pt; line-height: 1.36; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .toolbar { display: none; }
   main { width: auto; padding: 0; }
-  .page { margin: 0; min-height: 272mm; padding: 0; border-radius: 0; }
+  .page { margin: 0; min-height: 272mm; padding: 0; border: 0; border-radius: 0; }
   .page + .page { break-before: page; }
   .hero { padding-block: 1.12em; }
   .hero h1 { font-size: 42pt; }
