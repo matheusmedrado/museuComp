@@ -59,6 +59,7 @@ function sheet(cards, side) {
 }
 
 async function loadDeck() {
+  const initialHash = location.hash;
   document.getElementById('load-error').hidden = true;
   document.getElementById('status').textContent = 'Carregando cartas…';
   const [entries, credits] = await Promise.all([
@@ -103,6 +104,10 @@ async function loadDeck() {
   button.disabled = false;
   button.textContent = 'Imprimir baralho ↗';
   document.getElementById('print-status').textContent = 'A4 · frente e verso · baralho completo';
+  // The catalog changes the height above deep links after the browser's first scroll.
+  if (initialHash && location.hash === initialHash) {
+    document.getElementById(initialHash.slice(1))?.scrollIntoView();
+  }
 }
 
 function normalize(value) {
