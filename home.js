@@ -20,7 +20,7 @@ async function showPreview() {
   document.getElementById('card-count').textContent = String(cards.length).padStart(2, '0');
   document.querySelector('.hero-facts dd').textContent = 'cartas para descobrir';
   const preview = document.getElementById('hero-cards');
-  const sample = [['ada-lovelace', false], ['transistor', true], ['margaret-hamilton', false]];
+  const sample = [['margaret-hamilton', false], ['margaret-hamilton', true]];
   const entries = sample.map(([id, back]) => [cards.find(card => card.id === id), back]);
   if (entries.some(([card]) => !card)) return;
   preview.replaceChildren();
