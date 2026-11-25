@@ -24,6 +24,8 @@ Uma abertura de 1,8 segundo apresenta o sistema uma vez por aba, sem depender da
 movimento reduzido pulam essa abertura. O início mostra três cartas reais se organizando
 na linha do tempo; a animação termina e pode ser repetida pelo botão **↻**.
 Com movimento reduzido, as cartas e seus anos aparecem diretamente na posição final.
+Use **Imprimir** dentro do sistema para os arquivos completos; o comando de impressão
+do navegador no desktop produz apenas um guia com links para o baralho e o manual.
 Sem JavaScript, os textos do início e o manual continuam disponíveis.
 O visual escuro é só da tela: o manual mantém o papel claro na impressão e as cartas
 continuam com o mesmo molde compartilhado entre tela e A4. Não há framework nem build.

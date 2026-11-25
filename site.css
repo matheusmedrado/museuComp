@@ -32,6 +32,7 @@ img { max-width: 100%; }
 .skip-link:focus { transform: translateY(0); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
 .icon-library { position: absolute; width: 0; height: 0; overflow: hidden; }
+.desktop-print-guide { display: none; }
 .brand-link { color: var(--ink); white-space: nowrap; text-decoration: none; font: 400 2rem/1 var(--logo-font); letter-spacing: 0; }
 .brand-link > span:first-child { color: var(--accent); }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 1.3rem; min-height: 44px; padding: .7rem 1rem; border: 1px solid #111219; border-radius: 3px; text-decoration: none; font-size: .8rem; font-weight: 650; line-height: 1.5; box-shadow: inset 1px 1px 0 #ffffff45, 2px 2px 0 #101116; }
@@ -248,6 +249,10 @@ p { margin-top: 0; }
 @media print {
   :root { color-scheme: light; }
   .boot-screen { display: none !important; }
+  .home-page #os-shell, .home-page #desktop-announcement { display: none; }
+  .desktop-print-guide { display: block; padding: 1cm; font-size: 11pt; }
+  .desktop-print-guide h1 { font-size: 22pt; line-height: 1.2; }
+  .desktop-print-guide h2 { margin-top: 1.5em; font-size: 16pt; }
   .site-header, .site-footer, .skip-link { display: none; }
   .home-page { background: white; color: black; }
   .home-page .os-menubar, .home-page .desktop-shortcuts, .home-page .window-controls, .home-page .app-window { display: none; }
