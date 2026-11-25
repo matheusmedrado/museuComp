@@ -22,7 +22,7 @@ codificar. Exemplo a explicitar: quantas vezes se pode Trocar antes de encaixar.
    regras resumidas. Embaralhar; abrir a carta central; distribuir 5, 4 ou 3 cartas
    por mão, respectivamente, e 1 Bit para cada participante.
 2. **Vez de jogar.** Mostrar jogador ativo, sua mão e a linha com os anos já
-   revelados. Selecionar uma carta, ler a dica e escolher um intervalo — incluindo
+   revelados. Selecionar uma carta, ler a dica e escolher um intervalo, incluindo
    antes da primeira e depois da última. Oferecer botões de posição, não depender
    de arrastar. Confirmar sem revelar o ano.
 3. **Desafio.** Pausar antes de virar. No Explorador, qualquer outro jogador pode
