@@ -13,10 +13,12 @@ Não há dependências nem etapa de build. Clique na carta ou use **Virar carta*
 o ano. Abra o [site do jogo](index.html) para conhecer o projeto e aprender a jogar.
 Use a busca e o filtro de categorias para explorar as cartas. A impressão sempre inclui o baralho completo.
 
-O início é um desktop escuro inspirado nos primeiros sistemas gráficos: os atalhos abrem
-janelas com as regras, a impressão e a história do projeto. No computador, arraste pela
-barra de título, expanda, minimize ou feche as janelas; reabra-as pelo menu ou pelo dock.
-No celular, o conteúdo segue o fluxo da página. A tecla **Esc** fecha a janela ativa.
+O início é um desktop escuro inspirado no Macintosh clássico, com fundo liso e janela
+centralizada. O menu e os ícones abrem o baralho, o manual, os créditos e a impressão
+dentro do próprio sistema. No computador, arraste pela barra de título, expanda,
+minimize ou feche as janelas; reabra-as pelo menu ou pelos ícones. No celular, um
+aplicativo ocupa a área de trabalho por vez, com rolagem dentro da janela.
+A tecla **Esc** fecha a janela ativa, inclusive quando o foco está no baralho ou manual.
 Sem JavaScript, os textos do início e o manual continuam disponíveis.
 O visual escuro é só da tela: o manual mantém o papel claro na impressão e as cartas
 continuam com o mesmo molde compartilhado entre tela e A4. Não há framework nem build.
@@ -26,6 +28,12 @@ e com gráficos de fundo. Para impressão frente e verso, use **virar pela borda
 cada página de frentes é seguida pela página de versos com as colunas espelhadas.
 Corte nos limites das cartas de 63 × 88 mm. Os créditos vêm ao final;
 mantenha-os junto ao baralho impresso.
+
+Os documentos `deck.html` e `manual.html` são usados em janelas de mesma origem,
+sem duplicar os dados nem os moldes. Continuam disponíveis diretamente, inclusive
+para impressão. Links entre os aplicativos são encaminhados pelo desktop;
+links de fontes e licenças externas abrem em outra aba. Fragmentos como
+`index.html#baralho`, `#manual/bits-title` e os antigos links numéricos continuam úteis.
 
 ## Visual das cartas
 
@@ -42,7 +50,15 @@ Na tela as cartas crescem com o texto; na impressão mantêm 63 × 88 mm, com a
 imagem ajustada para acomodar a dica e os créditos sem ultrapassar o corte.
 
 O site usa a marca **CompLine**, uma junção de computação e linha do tempo com um
-aceno a *compiler*. As regras e o catálogo permanecem os mesmos.
+aceno a *compiler*. O wordmark do site, do manual e das cartas usa
+[Array, de Frode Helland](https://www.fontshare.com/fonts/array), carregada pela API
+oficial do Fontshare sob a [licença ITF FFL](https://www.fontshare.com/licenses/itf-ffl).
+Os arquivos da fonte não são redistribuídos no repositório; a primeira carga precisa
+de conexão com o Fontshare. O corpo do texto continua com fontes do sistema.
+Os controles de impressão aguardam as fontes; as regras e o catálogo não mudaram.
+
+A versão branca do logo enviada pelo museu está em `img/museu-logo-white.png`,
+usada sem redesenho na barra do sistema e na janela Sobre.
 
 O logo fornecido pelo museu está em `img/museu-logo.png`. As cartas usam só seu símbolo,
 recortado sem redesenho em `img/museu-symbol.png`, com transparência preservada e

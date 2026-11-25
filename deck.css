@@ -48,6 +48,30 @@ button:disabled { cursor: wait; opacity: .55; }
 @media (prefers-reduced-motion: no-preference) { .deck .card { animation: reveal .2s ease-out; } @keyframes reveal { from { transform: perspective(32rem) rotateY(15deg); opacity: .65; } } }
 
 @page { size: A4 portrait; margin: 0; }
+/* One catalog, presented as an app inside the desktop; print rules stay shared. */
+@media screen {
+  .in-desktop { background: var(--surface); }
+  .in-desktop body { background: var(--surface); }
+  .in-desktop .site-header, .in-desktop .site-footer,
+  .in-desktop .deck-head, .in-desktop .print-panel,
+  .in-desktop .collection-heading, .in-desktop .play-note { display: none; }
+  .in-desktop .screen { width: calc(100% - 2.5rem); padding-top: 1.2rem; }
+  .in-desktop .deck-tools { padding: 0 0 1rem; border: 0; border-bottom: 1px solid var(--line); }
+  .in-desktop .deck-tools input, .in-desktop .deck-tools select { background: #1d1e27; }
+  .in-desktop .deck { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.7rem 1.2rem; padding-bottom: 2rem; }
+  .in-desktop:not(.credits-app) .credits { display: none; }
+  .in-desktop.credits-app .screen { display: none; }
+  .in-desktop.credits-app .credits { width: calc(100% - 3rem); padding-top: 1.5rem; border: 0; }
+}
+@media screen and (max-width: 620px) {
+  .in-desktop .screen { width: calc(100% - 1.5rem); padding-top: .8rem; }
+  .in-desktop .deck { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3rem .8rem; padding-inline: 0; }
+  .in-desktop .deck-tools { gap: .8rem; }
+  .in-desktop .search-field, .in-desktop .category-field { flex-basis: 100%; }
+  .in-desktop .deck-tools label { font-size: .65rem; }
+  .in-desktop #status { margin-block: 1rem; }
+}
+@media screen and (max-width: 380px) { .in-desktop .deck { grid-template-columns: 1fr; padding-inline: .6rem; } }
 @media print {
   html, body { background: white; }
   .site-header, .site-footer, .screen, .skip-link, .credits .overline { display: none; }
