@@ -12,6 +12,7 @@ async function showPreview() {
   const entries = sample.map(([id, back]) => [cards.find(card => card.id === id), back]);
   if (entries.some(([card]) => !card)) return;
   preview.replaceChildren();
+  const illustrations = [];
   for (const [entry, back] of entries) {
     const wrapper = document.createElement('div');
     wrapper.className = 'hero-card';
@@ -19,8 +20,10 @@ async function showPreview() {
     if (back) card.setAttribute('aria-label', `${entry.name}, verso: ${entry.year}`);
     wrapper.append(card);
     preview.append(wrapper);
-    if (!back) await applyImage(entry, credits?.[entry.id], [card]);
+    if (!back) illustrations.push([entry, card]);
   }
+  // Insert both fixed-size faces before loading artwork, keeping deep links stable.
+  await Promise.all(illustrations.map(([entry, card]) => applyImage(entry, credits?.[entry.id], [card])));
 }
 
 showPreview().catch(() => {
