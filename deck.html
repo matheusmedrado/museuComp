@@ -60,5 +60,15 @@
       <p class="credit-note" hidden></p>
     </li>
   </template>
+  <script>
+    // ES modules cannot start from file://; show the server guide without them.
+    if (location.protocol === 'file:') {
+      document.getElementById('load-error').hidden = false;
+      document.getElementById('status').textContent = 'Abra o baralho por um servidor local para carregar as cartas.';
+      document.getElementById('print-status').textContent = 'Consulte o guia do projeto para iniciar o servidor.';
+      document.getElementById('print').textContent = 'Impressão indisponível';
+      document.getElementById('retry').hidden = true;
+    }
+  </script>
 </body>
 </html>
