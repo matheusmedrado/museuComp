@@ -49,7 +49,6 @@ function openWindow(id, moveFocus = true, section = '') {
   }
   const wasHidden = window.hidden;
   window.hidden = false;
-  loadFrame(window, section);
   if (id === 'imprimir') {
     loadFrame(byId.get('baralho'));
     loadFrame(byId.get('manual'));
@@ -57,6 +56,8 @@ function openWindow(id, moveFocus = true, section = '') {
   if (wasHidden && (!window.style.left || !window.style.top)) placeWindow(window);
   focusWindow(window);
   if (moveFocus) window.focus({ preventScroll: true });
+  // Focus the shell first: a loaded section may then transfer focus into its frame.
+  loadFrame(window, section);
 }
 
 function readHash(moveFocus = false) {
