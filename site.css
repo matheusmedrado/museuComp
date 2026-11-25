@@ -118,8 +118,8 @@ p { margin-top: 0; }
 .hero-card .card { border: 1px solid #a2a6de80; }
 .timeline-placeholder { width: 100%; aspect-ratio: 63 / 88; border: 1px solid var(--line); border-radius: 7px; background: var(--surface-raised); }
 .timeline-year { position: absolute; top: calc(100% + 14px); left: 50%; translate: -50% 0; padding: 2px 8px; border: 1px solid #7d8195; background: var(--surface); color: var(--accent); font: .66rem/1.5 var(--mono); transform: rotate(calc(-1 * var(--end-r))); }
-.timeline-exhibit figcaption { position: relative; display: inline-block; color: var(--soft-ink); font: .6rem/1.7 var(--mono); }
-#replay-hero { position: absolute; left: calc(100% + 8px); top: 50%; translate: 0 -50%; width: 30px; height: 30px; padding: 0; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--soft-ink); font-size: 1.15rem; }
+.timeline-exhibit figcaption { display: flex; align-items: center; justify-content: center; gap: .5rem; color: var(--soft-ink); font: .6rem/1.7 var(--mono); }
+#replay-hero { flex: 0 0 30px; width: 30px; height: 30px; padding: 0; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--soft-ink); font-size: 1.15rem; }
 #replay-hero:hover { border-color: var(--line); color: var(--ink); }
 .hero-actions { display: flex; flex: none; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: auto; }
 .preview-loading { padding-top: 6rem; margin: 0; color: var(--soft-ink); font-size: .75rem; }
