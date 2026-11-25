@@ -2,7 +2,7 @@
 .card { --paper: #fff; --muted: #dedff2; container-type: inline-size; width: 100%; aspect-ratio: 63 / 88; background: var(--navy); color: var(--paper); padding: 7%; border-radius: 4%; }
 .frame { position: relative; height: 100%; display: flex; flex-direction: column; min-width: 0; }
 .card-head { display: flex; align-items: center; justify-content: space-between; padding: 0 0 6%; gap: 4%; border-bottom: 1px solid #ffffff40; }
-.wordmark { font: 650 5cqw/1 system-ui, sans-serif; letter-spacing: -.05em; }
+.wordmark { font: 650 5cqw/1 var(--logo-font, system-ui), sans-serif; letter-spacing: -.05em; }
 .museum-symbol { display: block; flex: none; width: 10cqw; height: auto; filter: brightness(0) invert(1); }
 .card-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .35em; margin: 0 0 4%; padding-left: 13%; color: var(--cyan); font: 500 2.4cqw/1.2 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
 .category { overflow-wrap: anywhere; }
